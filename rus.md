@@ -1,5 +1,5 @@
 ---
-title: Павел Власихин
+title:
 permalink: /rus/
 ---
 

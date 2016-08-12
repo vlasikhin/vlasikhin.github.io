@@ -1,5 +1,5 @@
 ---
-title: Pavel Vlasikhin
+title:
 permalink: /eng/
 ---
 
