@@ -19,12 +19,14 @@ markdown:           kramdown
 
 # Navigation
 nav:
-  - name:           "blog"
-    href:           "https://vlasikhin.github.io/"
   - name:           "eng"
     href:           "/eng"
   - name:           "rus"
     href:           "/rus"
+  - name:           "blog"
+    href:           "https://vlasikhin.github.io/"
+  - name:           "about"
+    href:           "/about"
 
 
 # Sass
