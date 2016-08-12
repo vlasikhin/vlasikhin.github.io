@@ -4,15 +4,15 @@ description:        "Ruby on Rails developer"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
 url:                "https://vlasikhin.github.io/"
-author:             "vlasikhin"
+author:             "me"
 twitter:
-  username:         "vlasikhin"
+  username:         "me"
 
 
 # URL
 baseurl:            ""
 #baseurl:            "" #For Root Domain
-permalink:          /:year/:month/:day/:title/
+#permalink:          /:year/:month/:day/:title/
 
 # Markdown
 markdown:           kramdown
@@ -23,10 +23,8 @@ nav:
     href:           "/eng"
   - name:           "rus"
     href:           "/rus"
-  - name:           "blog"
-    href:           "https://vlasikhin.github.io/"
   - name:           "about"
-    href:           "/about"
+    href:           "/"
 
 
 # Sass
