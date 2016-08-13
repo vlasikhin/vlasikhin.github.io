@@ -19,11 +19,11 @@ markdown:           kramdown
 
 # Navigation
 nav:
-  - name:           "eng"
+  - name:           "CV"
     href:           "/eng"
-  - name:           "rus"
+  - name:           "Резюме"
     href:           "/rus"
-  - name:           "about"
+  - name:           "contacts"
     href:           "/"
 
 
