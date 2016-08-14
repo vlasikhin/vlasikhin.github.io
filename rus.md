@@ -23,10 +23,39 @@ permalink: /rus/
 * Знаком с системами управления проектов(Pivotal Tracker, waffle.io, Trello)
 * Деплой и настройка серверов(capistrano, nginx, passenger, unicorn)
 * Написание Юнит-тестов с использованием фреймворков rspec, capybara
-* Работал с гемами: `carrierwave`, `cancan`, `devise`, `better_errors`, `factory_girl`, `kaminari`, `simple-form`, `nokogiri`, `responders`, `delayed_job`, `whenever`, `activeadmin`, `omniauth`, `paperclip`, `capistrano`, `twitter`, `koala`, `faraday`, `foreman`, `rescue`, `sidekiq`, `doorkeeper`, `pry`, и т.д.
+* Работал с гемами:
+
+> `carrierwave`, `cancan`, `devise`, `better_errors`, `factory_girl`,
+  `kaminari`, `simple-form`, `nokogiri`, `responders`, `delayed_job`,
+  `whenever`, `activeadmin`, `omniauth`, `paperclip`, `capistrano`, `twitter`,
+  `koala`, `faraday`, `foreman`, `rescue`, `sidekiq`, `doorkeeper`, `pry`, и т.д.
+
 * Понимаю необходимость и использую кэширование
 * rbenv и rvm
 * Опыт рыботы над проектами с TDD и BDD подходами
+
+***
+
+### Проекты:
+
+##### Сервис вопросов и ответов, клон Stack Overflow
+
+_Сам [Проект](http://146.185.136.163/), код проекта на [GitHub](https://github.com/vlasikhin/QA-Service)_
+
+- В проекте доступна регистрация пользователей, реализована возможность войти через facebook/twitter.
+- Любой пользователь может просматривать вопросы и ответы и выполнять полнотексовый поиск по приложенияю.
+- Предусмотрены права администратора
+- Зарегистрированные пользователи могут создавать вопросы и ответы, голосовать за вопрос и ответ(кроме своего собственного).
+- Автор вопроса имеет возможность выбрать лучший ответ на свой вопрос, который после выбора переместится в начало списка ответов.
+- Так же реализовано кеширование.
+- Добавлена возможность выполнения задач по расписанию(отправка почтовой рассылки)
+- Пользователь сайта может подписаться на вопрос и получать письма об обновлениях.
+- Основные гемы:
+
+>`rails (4.2.6)`, `pg`, `devise`, `simple_form`, `carrierwave`, `slim`,`private_pub`,
+  `omniauth`,`cancancan`,`doorkeeper`,`sidekiq`,`whenever`,`thinking-sphinx`,`unicorn`,
+  `rspec-rails`,`capybara`,`pry`,`capistrano`
+
 
 ***
 

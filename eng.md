@@ -24,7 +24,13 @@ Besides I have communication skills and I have a ability to handle pressure and 
 * Project management systems (Pivotal Tracker, waffle.io, Trello)
 * Server setting and deployment (capistrano, nginx, passenger, unicorn)
 * Writing Unit-tests using rspec, capybara
-* Gems: `carrierwave`, `cancan`, `devise`, `better_errors`, `factory_girl`, `kaminari`, `simple-form`, `nokogiri`, `responders`, `delayed_job`, `whenever`, `activeadmin`, `omniauth`, `paperclip`, `capistrano`, `twitter`, `koala`, `faraday`, `foreman`, `rescue`, `sidekiq`, `doorkeeper`, `pry` ...
+* Gems:
+
+> `carrierwave`, `cancan`, `devise`, `better_errors`, `factory_girl`, `kaminari`,
+  `simple-form`, `nokogiri`, `responders`, `delayed_job`, `whenever`, `activeadmin`,
+  `omniauth`, `paperclip`, `capistrano`, `twitter`, `koala`, `faraday`, `foreman`, `rescue`,
+  `sidekiq`, `doorkeeper`, `pry` ...
+
 * Use caching and understand why it is necessary
 * rbenv и rvm
 * Worked on projects using TDD и BDD
