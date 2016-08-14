@@ -41,7 +41,7 @@ Besides I have communication skills and I have a ability to handle pressure and 
 
 ###### Saint-Petersburg, 07.2015 - Present
 
-_Digital content-manager, "Lincer" ([link](www.lincer.ru))_
+_Digital content-manager, "Lincer" ([link](http://lincer.ru/))_
 
 Oversaw website content development and used analytics to ensure content
 effectiveness and quality of user experience.
