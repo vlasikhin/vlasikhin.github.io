@@ -15,7 +15,7 @@ Besides I have communication skills and I have a ability to handle pressure and 
 
 ### Skills:
 
-* Ruby(1.9.3, 2.0, 2.1, 2.3), also familiar with с Javascript, Coffescript
+* Ruby(1.9.3, 2.0, 2.1, 2.3), also familiar with Javascript, Coffescript
 * Ruby on Rails (4+, 5), Jquery
 * *nix-system confident user (Ubuntu, macOS)
 * Html5, SCSS, CSS,  Haml, Slim

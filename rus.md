@@ -6,13 +6,13 @@ permalink: /rus/
 
 ### Обо мне:
 
-Начинающий разработчик с горящими глазами и большими планами.
+Увлеченный разработчик с большими планами.
 Стараюсь каждый день изучать новые технологии и решать новые проблемы,
 хочу присоединиться к команде единомышленников.
 
 ***
 
-### Умения:
+### Навыки:
 
 * Ruby(1.9.3, 2.0, 2.1, 2.3), также знаком с Javascript, Coffescript
 * Ruby on Rails (4+, 5), работа с клиентскими библиотеками и фреймворками Jquery
@@ -21,12 +21,12 @@ permalink: /rus/
 * PostgreSql
 * Git (merge, rebase)
 * Знаком с системами управления проектов(Pivotal Tracker, waffle.io, Trello)
-* Деплой, настройка и разворачивание серверов(capistrano, nginx, passenger, unicorn)
+* Деплой и настройка серверов(capistrano, nginx, passenger, unicorn)
 * Написание Юнит-тестов с использованием фреймворков rspec, capybara
 * Работал с гемами: `carrierwave`, `cancan`, `devise`, `better_errors`, `factory_girl`, `kaminari`, `simple-form`, `nokogiri`, `responders`, `delayed_job`, `whenever`, `activeadmin`, `omniauth`, `paperclip`, `capistrano`, `twitter`, `koala`, `faraday`, `foreman`, `rescue`, `sidekiq`, `doorkeeper`, `pry`, и т.д.
 * Понимаю необходимость и использую кэширование
 * rbenv и rvm
-* Опыт рыботы над с проектами с TDD и BDD подходами
+* Опыт рыботы над проектами с TDD и BDD подходами
 
 ***
 
