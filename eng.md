@@ -2,7 +2,6 @@
 title: Ruby on Rails developer
 permalink: /eng/
 ---
-***
 
 ### About me:
 

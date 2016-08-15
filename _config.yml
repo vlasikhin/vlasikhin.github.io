@@ -11,8 +11,8 @@ twitter:
 
 # URL
 baseurl:            ""
-#baseurl:            "" #For Root Domain
-#permalink:          /:year/:month/:day/:title/
+baseurl:            "" #For Root Domain
+permalink:          /:year/:month/:day/:title/
 
 # Markdown
 markdown:           kramdown
@@ -23,6 +23,8 @@ nav:
     href:           "/eng"
   - name:           "Резюме"
     href:           "/rus"
+  - name:           "blog"
+    href:           "/blog"
   - name:           "contacts"
     href:           "/"
 
@@ -39,12 +41,12 @@ defaults:
       type:         "pages"
     values:
       layout:       "page"
-#  -
-#    scope:
-#      path:         ""
-#      type:         "posts"
-#    values:
-#      layout:       "post"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
 
 gems:
   - jekyll-seo-tag
