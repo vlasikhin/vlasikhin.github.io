@@ -3,7 +3,7 @@ name:               "Pavel Vlasikhin"
 description:        "Ruby on Rails developer"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
-url:                "https://vlasikhin.github.io/"
+url:                "www.vlasikhin.ru"
 author:             "me"
 twitter:
   username:         "me"
