@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<header class="masthead">
+    <h1 class="masthead-title">
+        <a href="{{ site.baseurl }}/">{{ site.name }}</a>
+    </h1>
+<nav class="masthead-nav">
+    {% for nav in site.nav %}
+        <a href="{{ nav.href }}">{{ nav.name }}</a>
+    {% endfor %}
+</nav>
+</header>
+<hr>
+<h3> Contacts: </h3>
+<address>
+  <ul>
+    <li> email: <a href="mailto:vlasikhinpavel@gmail.com">vlasikhinpavel@gmail.com</a></li>
+    <li> phone: +7 (905) 222-48-08 </li>
+    <li> telegram: indaemonedeus </li>
+    <li> skype: indaemonedeus </li>
+    <li> <a href="https://github.com/vlasikhin">GitHub</a> </li>
+  </ul>
+</address>
+<hr>
