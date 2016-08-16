@@ -12,10 +12,10 @@ layout: default
   </nav>
 </header>
 <hr>
-<div class="content page">
-  <h1 class="page-title">{{ page.title }}</h1>
-
+<div class="content post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-date">
+    <time>{{ page.date | date_to_string }}</time>
+  </div>
   {{ content }}
-
-  <a href="/contacts">Contact me</a>
 </div>

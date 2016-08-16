@@ -2,7 +2,6 @@
 title: Ruby on Rails developer
 permalink: /eng/
 ---
-***
 
 ### About me:
 
@@ -34,6 +33,28 @@ Besides I have communication skills and I have a ability to handle pressure and 
 * Use caching and understand why it is necessary
 * rbenv и rvm
 * Worked on projects using TDD и BDD
+
+***
+
+### Projects:
+
+#### Questions and answers service.
+
+_[Project](http://146.185.136.163/), [GitHub](https://github.com/vlasikhin/QA-Service)_
+
+Available options:
+
+* user registration (including registration with facebook or twitter)
+* any user may view questions /answers and  do full text search
+* Question author may pick the best answer, which will be placed at the first position of the answer list.
+* Caching is implemented
+* scheduled  tasks option (sending emails etc)
+* Registered user may subscribe for question, he will receive notification emails
+* Basic gems:
+
+>`rails (4.2.6)`, `pg`, `devise`, `simple_form`, `carrierwave`, `slim`,`private_pub`,
+  `omniauth`,`cancancan`,`doorkeeper`,`sidekiq`,`whenever`,`thinking-sphinx`,`unicorn`,
+  `rspec-rails`,`capybara`,`pry`,`capistrano`
 
 ***
 
