@@ -91,3 +91,10 @@ _Computer Science and Engineering Department, MUH_
 
 ###### Saint-Petersburg, 04.2016 - 07.2016
 _"Ruby on Rails advanced development", online-school: [Thinknetica](http://thinknetica.com/)_
+
+***
+
+### Links:
+
+Download [resume](/files/resume_ror_vlasikhin.pdf)
+
