@@ -1,10 +1,5 @@
-sitemap:
-	file: "/sitemap.xml"
-	exclude:
-	    - "/eng.md"
-	    - "/rus.md"
-	    - "/contacts.html"
-	include_posts:
-	    - "/index.html"
-	change_frequency_name: "change_frequency"
-	priority_name: "priority"
+User-agent: *
+Disallow: /eng.md
+Disallow: /rus.md
+Disallow: /contacts.html
+Disallow: /files/
