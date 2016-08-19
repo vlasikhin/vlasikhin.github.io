@@ -4,14 +4,13 @@ description:        "Ruby on Rails developer"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
 url:                "www.vlasikhin.ru"
-author:             "me"
-twitter:
-  username:         "me"
+author:             "Pavel Vlasikhin"
+twitter:            
+  username:         "vlasikhin"
 
 
 # URL
 baseurl:            ""
-baseurl:            "" #For Root Domain
 permalink:          /:year/:month/:day/:title/
 
 # Markdown
@@ -50,3 +49,4 @@ defaults:
 
 gems:
   - jekyll-seo-tag
+  - jekyll-sitemap
