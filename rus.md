@@ -3,6 +3,8 @@ title: Ruby on Rails developer
 permalink: /rus/
 ---
 
+Скачать [резюме](/files/resume_ror_vlasikhin_rus.pdf)
+
 ### Обо мне:
 
 Увлеченный разработчик с большими планами.

@@ -3,6 +3,8 @@ title: Ruby on Rails developer
 permalink: /eng/
 ---
 
+Download [resume](/files/resume_ror_vlasikhin.pdf)
+
 ### About me:
 
 An ambitious problem solver with a passion for online businesses,
