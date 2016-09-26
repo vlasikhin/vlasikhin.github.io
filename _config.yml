@@ -4,10 +4,10 @@ description:        "Ruby on Rails developer"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
 url:                "www.vlasikhin.ru"
-author:             "Pavel Vlasikhin"
-twitter:            
-  username:         "vlasikhin"
-
+author:             "Pavel Vlasikhin"       
+github_username:    "vlasikhin"
+google_email:       "vlasikhinpavel@gmail.com"
+skype_username:     "indaemonedeus"
 
 # URL
 baseurl:            ""

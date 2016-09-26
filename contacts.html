@@ -11,17 +11,33 @@ layout: default
     {% endfor %}
 </nav>
 </header>
-<hr>
+
 <div class="content page">
-  <h1 class="page-title">Contacts:</h1>
-    <address>
-      <ul>
-        <li> email: <a href="mailto:vlasikhinpavel@gmail.com">vlasikhinpavel@gmail.com</a></li>
-        <li> phone: +7 (905) 222-48-08 </li>
-        <li> telegram: indaemonedeus </li>
-        <li> skype: indaemonedeus </li>
-        <li> <a href="https://github.com/vlasikhin">GitHub</a> </li>
-      </ul>
-    </address>
+    <hr>
+        <div class="social-icons">
+            <ul>
+                {% if site.github_username %}
+                    <li>
+                        <a href="https://github.com/{{ site.github_username }}">
+                            <i class="fa fa-github fa-2x"></i>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if site.skype_username %}
+                    <li>
+                        <a href="skype:{{ site.skype_username }}?add">
+                            <i class="fa fa-skype fa-2x"></i>
+                        </a>
+                    </li>    
+                {% endif %}    
+                {% if site.google_email %}
+                    <li>
+                        <a href="mailto:{{ site.google_email }}">
+                            <i class="fa fa-envelope fa-2x"></i>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>    
     <hr>
 </div>
