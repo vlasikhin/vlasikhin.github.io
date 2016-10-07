@@ -23,8 +23,8 @@ nav:
     href:           "/"
   - name:           "CV"
     href:           "/eng"
-  - name:           "Резюме"
-    href:           "/rus"
+  # - name:           "Резюме"
+  #   href:           "/rus"
   - name:           "contacts"
     href:           "/contacts"
 
