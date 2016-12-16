@@ -19,14 +19,14 @@ markdown:           kramdown
 
 # Navigation
 nav:
-  - name:           "notes"
-    href:           "/"
+  # - name:           "notes"
+  #   href:           "/"
   - name:           "CV"
     href:           "/eng"
   # - name:           "Резюме"
   #   href:           "/rus"
   - name:           "contacts"
-    href:           "/contacts"
+    href:           "/"
 
 
 # Sass
