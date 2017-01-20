@@ -22,9 +22,9 @@ nav:
   # - name:           "notes"
   #   href:           "/"
   - name:           "CV"
-    href:           "/eng"
-  # - name:           "Резюме"
-  #   href:           "/rus"
+    href:           "/en"
+  - name:           "Резюме"
+    href:           "/rus"
   - name:           "contacts"
     href:           "/"
 

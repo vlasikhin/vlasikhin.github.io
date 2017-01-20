@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /eng.md
-Disallow: /rus.md
+Disallow: /en.md
+Disallow: /ru.md
 Disallow: /contacts.html
 Disallow: /files/

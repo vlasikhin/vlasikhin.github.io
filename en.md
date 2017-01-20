@@ -1,6 +1,6 @@
 ---
 title: Ruby on Rails developer
-permalink: /eng/
+permalink: /en/
 ---
 
 Download [resume](/files/resume_ror_vlasikhin.pdf)
@@ -20,7 +20,7 @@ Besides I have communication skills and I have a ability to handle pressure and 
 * Ruby on Rails (4+, 5), Jquery
 * *nix-system confident user (Ubuntu, macOS)
 * Html5, SCSS, CSS,  Haml, Slim
-* PostgreSql
+* PostgreSql, Cassandra
 * Git (merge, rebase)
 * Project management systems (Pivotal Tracker, waffle.io, Trello)
 * Server setting and deployment (capistrano, nginx, passenger, unicorn)
@@ -38,31 +38,15 @@ Besides I have communication skills and I have a ability to handle pressure and 
 
 ***
 
-### Projects:
-
-#### Questions and answers service.
-
-_[Project](http://146.185.136.163/), [GitHub](https://github.com/vlasikhin/QA-Service)_
-
-Available options:
-
-* user registration (including registration with facebook or twitter)
-* any user may view questions /answers and  do full text search
-* Question author may pick the best answer, which will be placed at the first position of the answer list.
-* Caching is implemented
-* scheduled  tasks option (sending emails etc)
-* Registered user may subscribe for question, he will receive notification emails
-* Basic gems:
-
->`rails (4.2.6)`, `pg`, `devise`, `simple_form`, `carrierwave`, `slim`,`private_pub`,
-  `omniauth`,`cancancan`,`doorkeeper`,`sidekiq`,`whenever`,`thinking-sphinx`,`unicorn`,
-  `rspec-rails`,`capybara`,`pry`,`capistrano`
-
-***
-
 ### Career history:
 
-###### Saint-Petersburg, 07.2015 - Present
+###### Saint-Petersburg, 09.2016 - Present
+
+_Web-developer, "RCNTEC"([link](http://www.rcntec.com))_
+
+Developing of micro services for inside company usage
+
+###### Saint-Petersburg, 07.2015 - 09.2016
 
 _Digital content-manager, "Lincer" ([link](http://lincer.ru/))_
 
