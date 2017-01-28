@@ -1,6 +1,6 @@
 # Basic
 name:               "Pavel Vlasikhin"
-description:        "Ruby on Rails developer"
+description:        "Pavel Vlasikhin"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
 url:                "www.vlasikhin.ru"
@@ -25,9 +25,10 @@ nav:
     href:           "/en"
   - name:           "Резюме"
     href:           "/ru"
+  - name:           "about"
+    href:           "/about"    
   - name:           "contacts"
-    href:           "/"
-
+    href:           "/contacts"
 
 # Sass
 sass:
