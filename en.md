@@ -1,9 +1,10 @@
 ---
-title: Ruby on Rails developer
 permalink: /en/
 ---
 
-Download [resume](/files/resume_ror_vlasikhin.pdf)
+## Ruby on Rails developer
+
+Download [cv](/files/cv_ror_vlasikhin.pdf)
 
 ### About me:
 
@@ -21,7 +22,7 @@ Besides I have communication skills and I have a ability to handle pressure and 
 * *nix-system confident user (Ubuntu, macOS)
 * Html5, SCSS, CSS,  Haml, Slim
 * PostgreSql, Cassandra
-* Git (merge, rebase)
+* Git
 * Project management systems (Pivotal Tracker, waffle.io, Trello)
 * Server setting and deployment (capistrano, nginx, passenger, unicorn)
 * Writing Unit-tests using rspec, capybara
@@ -56,7 +57,7 @@ Ensured content aligned with brand and supported business objectives of all busi
 Created web content strategy and managed content development.
 Business analysis and documentation of functional specifications for content-related web projects
 
-Also work as system administrator:
+Also worked as a system administrator:
 
 Installation and maintenance of all systems within a clients digital environment.
 Producing documentation on operational, system and user procedures & guidelines.
@@ -82,5 +83,5 @@ _"Ruby on Rails advanced development", online-school: [Thinknetica](http://think
 
 ### Links:
 
-Download [resume](/files/resume_ror_vlasikhin.pdf)
+Download [cv](/files/cv_ror_vlasikhin.pdf)
 

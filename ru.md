@@ -1,7 +1,8 @@
 ---
-title: Ruby on Rails developer
 permalink: /ru/
 ---
+
+## Ruby on Rails developer
 
 Скачать [резюме](/files/resume_ror_vlasikhin_rus.pdf)
 
@@ -20,7 +21,7 @@ permalink: /ru/
 * Хорошо знаком  с *nix-системами (Ubuntu, macOS)
 * Html5, SCSS, CSS,  Haml, Slim
 * PostgreSql, Cassandra
-* Git (merge, rebase)
+* Git
 * Знаком с системами управления проектов(Pivotal Tracker, waffle.io, Trello)
 * Деплой и настройка серверов(capistrano, nginx, passenger, unicorn)
 * Написание Юнит-тестов с использованием фреймворков rspec, capybara
@@ -43,7 +44,7 @@ permalink: /ru/
 
 _Web-разработчик, ООО "АРСИЭНЕК"([Сайт](http://rcntec.com/))_
 
-Разработка сервисов для использования внутри компании
+Разработка приложений для использования системными администраторами внутри компании.
 
 ###### г.Санкт-Петербург, 07.2015 - 09.2016
 
