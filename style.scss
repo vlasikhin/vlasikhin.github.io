@@ -32,7 +32,7 @@ body {
 }
 
 a {
-  color: #268bd2;
+  color: #84B0BF;
   text-decoration: none;
 
   &:hover,
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: 600;
   line-height: 1.1;
-  color: #333;
+  color: #515151;
   letter-spacing: -.025rem;
 }
 
@@ -127,13 +127,10 @@ ol + h3 {
 
 hr {
   border: 0;
-  height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-/*  border: 0;
   margin: 1.5rem auto;
   height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));*/
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0));
+
 }
 strong {
   color: #333;
@@ -261,7 +258,7 @@ tbody tr:nth-child(odd) th {
 }
 
 .container {
-  max-width: 38rem;
+  max-width: 50rem;
   padding: 2rem 1.5rem;
   margin-left:  auto;
   margin-right: auto;
@@ -387,10 +384,6 @@ tbody tr:nth-child(odd) th {
   .fa {
   color: #4C4C4C;
   }
-}
-.profile {
-  height: 245px;
-  width:245px;
 }
 
 .highlight .hll { background-color: #ffffcc }
