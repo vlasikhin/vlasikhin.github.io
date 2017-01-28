@@ -1,8 +1,8 @@
 ---
 permalink: /en/
+title: Ruby on Rails Developer
 ---
 
-## Ruby on Rails developer
 
 Download [cv](/files/cv_ror_vlasikhin.pdf)
 

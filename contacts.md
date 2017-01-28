@@ -1,7 +1,7 @@
 ---
 permalink: /contacts/
+title: Контакты
 ---
-## Контакты:
 
 [GitHub](https://github.com/{{ site.github_username }})  
 [Skype](skype:{{ site.skype_username }}?add)  

@@ -1,8 +1,7 @@
 ---
 permalink: /ru/
+title: Ruby on Rails Developer
 ---
-
-## Ruby on Rails developer
 
 Скачать [резюме](/files/resume_ror_vlasikhin_rus.pdf)
 
