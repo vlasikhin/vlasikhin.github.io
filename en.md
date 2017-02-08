@@ -43,13 +43,13 @@ Besides, I have communication skills and I have a ability to handle pressure and
 
 ###### Saint-Petersburg, 09.2016 - Present
 
-_Web-developer, "RCNTEC"([link](http://www.rcntec.com))_
+_Web-developer, ["RCNTEC"](http://www.rcntec.com)_
 
 Developing of micro services for inside company usage
 
 ###### Saint-Petersburg, 07.2015 - 09.2016
 
-_Digital content-manager, "Lincer" ([link](http://lincer.ru/))_
+_Digital content-manager, ["Lincer"](http://lincer.ru/)_
 
 Oversaw website content development and used analytics to ensure content
 effectiveness and quality of user experience.
