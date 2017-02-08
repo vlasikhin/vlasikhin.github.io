@@ -9,9 +9,9 @@ Download [cv](/files/cv_ror_vlasikhin.pdf)
 ### About me:
 
 An ambitious problem solver with a passion for online businesses,
-and who would like to join a team of like-minded developers.
+who would like to join a team of like-minded developers.
 Quick minded.
-Besides I have communication skills and I have a ability to handle pressure and meet deadlines.
+Besides, I have communication skills and I have a ability to handle pressure and meet deadlines.
 
 ***
 

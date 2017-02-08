@@ -17,7 +17,7 @@ title: Ruby on Rails Developer
 
 * Ruby(2.0 + ), также знаком с Javascript, Coffescript
 * Ruby on Rails (4+, 5), работа с клиентскими библиотеками и фреймворками Jquery
-* Хорошо знаком  с *nix-системами (Ubuntu, macOS)
+* Уверенный пользователь *nix-системам (Ubuntu, macOS)
 * Html5, SCSS, CSS,  Haml, Slim
 * PostgreSql, Cassandra
 * Git
