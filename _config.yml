@@ -3,11 +3,11 @@ name:               "Pavel Vlasikhin"
 description:        "Pavel Vlasikhin"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
-url:                "www.vlasikhin.ru"
-author:             "Pavel Vlasikhin"       
+url:                "http://vlasikhin.ru/"
+author:             "Pavel Vlasikhin"
 github_username:    "vlasikhin"
 google_email:       "vlasikhinpavel@gmail.com"
-skype_username:     "vlasikhin@yahoo.com"
+skype_username:     "indaemonedeus"
 telegram_username:  "indaemonedeus"
 
 # URL
@@ -26,7 +26,7 @@ nav:
   - name:           "Резюме"
     href:           "/ru"
   - name:           "about"
-    href:           "/about"    
+    href:           "/about"
   - name:           "contacts"
     href:           "/contacts"
 
