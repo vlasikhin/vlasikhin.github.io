@@ -1,1 +1,1 @@
-Source files for [vlasikhin.ru](http://vlasikhin.ru/)
+Source files for http://vlasikhin.ru
