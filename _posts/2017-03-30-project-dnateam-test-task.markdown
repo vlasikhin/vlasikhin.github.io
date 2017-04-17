@@ -13,13 +13,13 @@ author: vlasikhin
 externalLink: false
 ---
 
-### Тестовое задание в [dnateam](http://dnateam.ru/)
+### Тестовое задание в [dnateam](http://dnateam.ru/)  
 
-Описание тестового задания [тут](/files/dnateam_test_task.pdf)
+Описание тестового задания [тут](/files/dnateam_test_task.pdf)  
 
 ---
 
-[Код проекта на GitHub](https://github.com/vlasikhin/dna_demo)
+[Код проекта на GitHub](https://github.com/vlasikhin/dna_demo)  
 [Heroku](https://dnademo.herokuapp.com/)  
 
 `login:    admin@admin.com`  
