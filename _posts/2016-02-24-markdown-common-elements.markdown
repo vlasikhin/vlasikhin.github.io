@@ -2,7 +2,6 @@
 title: "Markdown Common Elements"
 layout: post
 date: 2016-02-24 22:44
-image: /assets/images/markdown.jpg
 headerImage: false
 tag:
 - markdown
@@ -17,7 +16,7 @@ description: Markdown summary with different options
 
 You can pick as item to see how to apply in markdown.
 
-### Comum Elements
+### Common Elements
 - [Basic formatting](#basic-formatting)
 - [Headings](#headings)
 - [Lists](#lists)
@@ -145,11 +144,11 @@ Markdown can also contain images. I'll need to add something here sometime.
 
 {% highlight raw %}
 ![Markdowm Image][/image/url]
-<figcaption class="caption">Photo by John Doe</figcaption>
+<figcaption class="caption">Photo by Luke Chesser</figcaption>
 {% endhighlight %}
 
 ![Markdowm Image][6]
-<figcaption class="caption">Photo by John Doe</figcaption>
+<figcaption class="caption">Photo by Luke Chesser</figcaption>
 
 *Bigger Images*?
 
@@ -217,4 +216,4 @@ $(window).scroll(function() {
 [3]: http://www.markitdown.net/
 [4]: http://daringfireball.net/projects/markdown/basics
 [5]: http://daringfireball.net/projects/markdown/syntax
-[6]: http://kune.fr/wp-content/uploads/2013/10/ghost-blog.jpg
+[6]: /assets/images/luke-chesser-48.jpg

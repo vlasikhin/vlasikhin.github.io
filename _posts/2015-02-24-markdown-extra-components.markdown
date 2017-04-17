@@ -2,7 +2,6 @@
 title: "Markdown Extra Components"
 layout: post
 date: 2016-02-24 22:48
-image: /assets/images/markdown.jpg
 headerImage: false
 tag:
 - markdown
@@ -11,7 +10,6 @@ tag:
 category: blog
 author: vlasikhin 
 description: Markdown summary with different options
-# jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
 ---
 
 ## Summary:
@@ -67,7 +65,7 @@ Like the [Medium](https://medium.com/) component.
 <div class="side-by-side">
     <div class="toleft">
         <img class="image" src="{{ site.url }}/{{ site.picture }}" alt="Alt Text">
-        <figcaption class="caption">Photo by John Doe</figcaption>
+        <figcaption class="caption">Photo by Pavel Vlasikhin</figcaption>
     </div>
 
     <div class="toright">
@@ -85,7 +83,7 @@ Like the [Medium](https://medium.com/) component.
 
     <div class="toright">
         <img class="image" src="{{ site.url }}/{{ site.picture }}" alt="Alt Text">
-        <figcaption class="caption">Photo by John Doe</figcaption>
+        <figcaption class="caption">Photo by Pavel Vlasikhin</figcaption>
     </div>
 </div>
 {% endhighlight %}
@@ -97,7 +95,7 @@ Like the [Medium](https://medium.com/) component.
 
     <div class="toright">
         <img class="image" src="{{ site.url }}/{{ site.picture }}" alt="Alt Text">
-        <figcaption class="caption">Photo by John Doe</figcaption>
+        <figcaption class="caption">Photo by Pavel Vlasikhin</figcaption>
     </div>
 </div>
 
@@ -142,10 +140,10 @@ You can add an especial hidden content that appears on hover.
 You can add Gists from github.
 
 {% highlight raw %}
-{ % gist sergiokopplin/91ff4220480727b47224245ee2e9c291 % }
+{ % gist vlasikhin/f3b88608d53482e047e9402c4b211b4e  % }
 {% endhighlight %}
 
-{% gist sergiokopplin/91ff4220480727b47224245ee2e9c291 %}
+{% gist vlasikhin/f3b88608d53482e047e9402c4b211b4e %}
 
 ---
 
