@@ -9,7 +9,7 @@ layout: page
 <p>
 	An ambitious problem solver with a passion for online businesses, 
 	who would like to join a team of likeminded developers. Quick minded. 
-	Besides, I have communication skills and I have a ability to handle pressure and meet deadlines.
+	Besides, I have communication skills and have an ability to handle pressure and meet deadlines.
 </p>
 
 <h2>Skills:</h2>
