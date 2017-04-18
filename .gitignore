@@ -1,5 +1,4 @@
-_site/
-.idea
-.sass-cache/
-contacts.html_
-
+.DS_Store
+_site
+.sass-cache
+Gemfile.lock

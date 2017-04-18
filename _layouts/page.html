@@ -1,20 +1,8 @@
 ---
 layout: default
 ---
-<header class="masthead">
-  <h1 class="masthead-title">
-    <a href="{{ site.baseurl }}/">{{ site.name }}</a>
-  </h1>
-  <nav class="masthead-nav">
-    {% for nav in site.nav %}
-      <a href="{{ nav.href }}">{{ nav.name }}</a>
-    {% endfor %}
-  </nav>
-</header>
-<hr>
-<div class="content page">
-  <h2 class="page-title">{{ page.title }}</h2>
+{% include header.html %}
 
-  {{ content }}
+{{content}}
 
-</div>
+{% include footer.html %}
