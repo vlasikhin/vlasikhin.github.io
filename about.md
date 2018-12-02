@@ -7,31 +7,27 @@ layout: page
 <h2>About me:</h2>
 
 <p>
-	An ambitious problem solver with a passion for online businesses, 
-	who would like to join a team of likeminded developers. Quick minded. 
-	Besides, I have communication skills and have an ability to handle pressure and meet deadlines.
+	Experienced Ruby on Rails developer who is enthusiastic about writing clean, efficient, and accessible code.
+	Have vast experience in web design for a variety of corporate clients.
 </p>
 
 <h2>Skills:</h2>
 
 <ul class="skill-list">
-	<li>HTML - Erb - Slim</li>
-	<li>Ruby(2.0 + ), also familiar with Javascript, Coffescript, Jquery </li>
-	<li>Ruby on Rails (4+, 5)</li>
+	<li>Ruby(2.0 + ), also familiar with Javascript</li>
+	<li>Ruby on Rails (4+, 5+)</li>
+	<li>*nix-system confident user</li>
 	<li>CSS Frameworks (Bootstrap, Foundation)</li>
-	<li>*nix-system confident user (Ubuntu, macOS)</li>
-	<li>PostgreSQL, MySQL, Cassandra</li>
+	<li>PostgreSQL, MySQL</li>
 	<li>Git</li>
-	<li>Use caching and understand why it is necessary</li>
-	<li>Worked on projects using TDD и BDD</li>
-	<li>Writing Unit-tests using rspec, capybara</li>
-	<li>Project management systems (Pivotal Tracker, waffle.io, Trello)</li>
-	<li>Server setting and deployment (capistrano, nginx, passenger, unicorn)</li>
-</ul>
+	<li>TDD and BDD</li>
+	<li>Rspec, Capybara, Factory Bot etc.</li>
+	<li>Project management systems (Pivotal Tracker, waffle.io, Trello, Jira)</li>
+	<li>Servers setting and deployment</li>
+	<li>Fluent English speaker</li>
 
 <h2>Links:</h2>
 
 <ul>
-	<li><a href="/files/cv_vlasikhin.pdf">cv</a></li>
-	<li><a href="/files/resume_vlasikhin.pdf">резюме</a></li>
+	<li><a href="/files/cv_vlasikhin.pdf">Download CV</a></li>
 </ul>
