@@ -1,0 +1,115 @@
+name: Pavel Vlasikhin
+support_dark_mode: true
+fork: false
+
+# Sidebar
+contact:
+  email: pavel.vlasikhin@gmail.com
+  github: vlasikhin
+  linkedin: pavluar
+  telegram: pavluar
+  phone: 
+  gitlab: 
+  twitter:
+  download: download pdf
+
+languages:
+  - idiom: English
+  - idiom: Russian
+
+education:
+  - degree: RoR advanced development
+    time: FEBRUARY 2016 - MAY 2016
+    university: Thinknetica, www.thinknetica.com
+
+  - degree: Computer Science
+    time: 2001 - 2007
+    university: MUH, Kirov
+
+skills:
+  - category: 4+ years expirience
+    skill: 
+      - Ruby, Ruby on Rails,
+      - git, rspec, sql, bash
+  - category: 2+ years expirience
+    skill:
+      - Docker, Redis, Postgres
+  - category: year or less expirience
+    skill:
+      - Golang, RabbitMQ, Elixir
+      - Ansible, Consul, AWS
+
+# Profile
+profile: |
+  Experienced Ruby on Rails developer who is enthusiastic about writing clean, efficient, and accessible code.
+  Have vast experience in web design for a variety of corporate clients.
+
+# Experience
+experience:
+  - role: Ruby Developer, full-time, remote
+    time: OCTOBER 2019 - PRESENT
+    company: Machinio, www.machinio.com
+    details: |
+      Develop backend on ruby language, using framework rails.
+    technologies_used: |
+      Ruby, Ruby on Rails, Postgress, Docker
+  
+  - role: Ruby Developer, full-time
+    time: JUNE 2018 - OCTOBER 2019 (1 year 6 month)
+    company: 3commas, www.3commas.io
+    details: |
+      Develop backend on ruby language, using framework rails.
+      Working with backend data processes for crypto trading automatisation tools.
+    technologies_used: |
+      Ruby, Ruby on Rails, Postgress, Docker, AWS, Go
+
+  - role: Ruby Developer, full-time
+    time: JUNE 2016 - JUNE 2018 (2 years)
+    company: SPB TV, www.amediateka.ru
+    details: |
+      Working with backend data processes. Main project - Amediateka, the leading Russian broadcaster.
+    technologies_used: |
+      Ruby, Ruby on Rails, Postgress, Docker, AWS
+
+  - role: Ruby Developer, part-time, remote
+    time: MAY 2016 - JUNE 2018 (2 year 1 month)
+    company: Machinio, www.machinio.com
+    details: |
+      Web Scraping
+    technologies_used: |
+      Ruby, Bash, Docker
+
+
+# publications:
+#   - title: Random title of paper. An interesting one.
+#     link: "#"
+#     authors: John E. Doe
+#     conference: Some conference, 2016
+
+#   - title: Second title of paper. An interesting one too.
+#     link: "#"
+#     authors: John E. Doe
+#     conference: Some conference again, 2018
+
+# projects:
+#   - title: Cool Project
+#     link: #
+#     details: |
+#       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+#       tempor incididunt ut labore et dolore magna aliqua.
+
+#   - title: Cool Project
+#     link: #
+#     details: |
+#       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+#       tempor incididunt ut labore et dolore magna aliqua.
+
+# # Volunteering
+# volunteering:
+#   - time: 2020-Present
+#     role: PR Manager
+#     company: Some random organization
+#     details: |
+#       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+#       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+#       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
