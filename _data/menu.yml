@@ -9,6 +9,7 @@ entries:
         url: https://github.com/vlasikhin
       - title: "keep in touch: <a href='https://t.me/pavluar'>telegram</a>, <a href='https://linkedin.com/in/pavluar'>linkedin</a>"
 
-  - title: pet projects
-    post_list:
-      limit: false
+  - title: projects
+    entries:
+      - title: Foodometer Bot
+        url: projects/foodometer_bot

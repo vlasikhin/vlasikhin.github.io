@@ -1,7 +1,8 @@
-theme: riggraz/no-style-please # https://github.com/riggraz/no-style-please
+remote_theme: riggraz/no-style-please # for production
+# theme: no-style-please # for developing locally
 
 title: Pavel Vlasikhin
-author: pavluar
+author: Pavel Vlasikhin
 email: me@pavluar.com
 url: https://pavluar.com/
 baseurl: ""
@@ -15,7 +16,7 @@ favicon: "favicon.ico"
 
 theme_config:
   appearance: "auto"
-  back_home_text: ".."
+  back_home_text: "<<"
   date_format: "%d-%m-%Y"
   show_description: false
 
