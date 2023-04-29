@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
-gem "jekyll", "3.5.2"
+gem "jekyll"
+gem "no-style-please"
 
-gem "jekyll-minifier", "0.1.10"
+gem "webrick", "~> 1.8"
+
+gem "kramdown-parser-gfm", "~> 1.1"

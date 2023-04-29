@@ -1,0 +1,14 @@
+entries:
+  - title: me
+    entries:
+      - title: CV
+        url: cv/cv
+      - title: email
+        url: mailto:me@pavluar.com
+      - title: github
+        url: https://github.com/vlasikhin
+      - title: "keep in touch: <a href='https://t.me/pavluar'>telegram</a>, <a href='https://linkedin.com/in/pavluar'>linkedin</a>"
+
+  - title: pet projects
+    post_list:
+      limit: false

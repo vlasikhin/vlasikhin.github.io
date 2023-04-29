@@ -1,15 +1,23 @@
+theme: no-style-please # https://github.com/riggraz/no-style-please
+
 title: Pavel Vlasikhin
-description: Ruby on Rails developer
+author: pavluar
+email: me@pavluar.com
 url: https://pavluar.com/
 baseurl: ""
-theme_skin: blue
+description: >
+  Experienced Ruby on Rails developer who is enthusiastic about writing clean, efficient, and accessible code.
+  Have vast experience in web design for a variety of corporate clients.
+
+permalink: "/:slug"
+
+favicon: "favicon.ico"
+
+theme_config:
+  appearance: "auto"
+  back_home_text: ".."
+  date_format: "%d-%m-%Y"
+  show_description: false
 
 sass:
-  sass_dir: _sass
-  style: compressed
-
-plugins:
-    - jekyll-minifier
-
-exclude:
-  - docker-compose.yml
+  style: "compressed"
