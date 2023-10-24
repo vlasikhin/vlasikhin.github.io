@@ -1,1 +1,1 @@
-# [..](https://vlasikhin.com)
+# [..](https://www.vlasikhin.com)
