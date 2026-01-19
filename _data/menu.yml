@@ -1,15 +1,11 @@
 entries:
-  - title: me
-    entries:
-      - title: CV
-        url: cv/cv
-      - title: email
-        url: mailto:pavel@vlasikhin.com
-      - title: github
-        url: https://github.com/vlasikhin
-      - title: "keep in touch: <a href='https://t.me/pavluar'>telegram</a>, <a href='https://linkedin.com/in/vlasikhin'>linkedin</a>"
-
-  # - title: projects
-  #   entries:
-  #     - title: Foodometer Bot
-  #       url: projects/foodometer_bot
+  - title: cv
+    url: cv/cv
+  - title: github
+    url: https://github.com/vlasikhin
+  - title: telegram
+    url: https://t.me/pavluar
+  - title: linkedin
+    url: https://linkedin.com/in/vlasikhin
+  - title: email
+    url: mailto:pavel@vlasikhin.com

@@ -1,59 +1,109 @@
-// -------------- THEME SWITCHER -------------- //
-@mixin dark-appearance {
-  filter: invert(1);
-
-  img {
-    filter: invert(1);
-
-    &.ioda {
-      filter: invert(0);
-    }
-  }
-}
-
-body[a="dark"] {
-  @include dark-appearance;
+// -------------- THEME -------------- //
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --text-secondary: #666666;
+  --accent: #111111;
 }
 
 @media (prefers-color-scheme: dark) {
   body[a="auto"] {
-    @include dark-appearance;
+    --bg: #111111;
+    --text: #eeeeee;
+    --text-secondary: #999999;
+    --accent: #eeeeee;
   }
 }
 
-html,
-body {
-  background: white;
+body[a="dark"] {
+  --bg: #111111;
+  --text: #eeeeee;
+  --text-secondary: #999999;
+  --accent: #eeeeee;
 }
 
+// -------------- BASE -------------- //
 html {
   height: 100%;
 }
 
 body {
-  color: black;
-  font-family: monospace;
-  font-size: 16px;
-  line-height: 1.4;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
   margin: 0;
   min-height: 100%;
-  overflow-wrap: break-word;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.post-meta {
-  text-align: right;
+// -------------- LAYOUT -------------- //
+.w {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 15vh 2rem 4rem;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 3rem;
+// -------------- HOME -------------- //
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 3rem 0;
+  letter-spacing: -0.02em;
 }
 
-hr {
-  margin: 2rem 0;
+// -------------- NAV -------------- //
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 0.6rem 0;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+
+  &::before {
+    content: '→';
+    margin-right: 0.75rem;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  &:hover {
+    color: var(--accent);
+
+    &::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+// -------------- PAGE CONTENT -------------- //
+h2, h3, h4, h5, h6 {
+  margin-top: 2.5rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+h3 {
+  font-size: 1rem;
 }
 
 p {
@@ -64,44 +114,32 @@ li {
   margin: 0.4rem 0;
 }
 
-*:target {
-  background: yellow;
-}
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
 
-.w {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 hr {
-  text-align: center;
-  border: 0;
-
-  &:before {
-    content: '/////'
-  }
-
-  &:after {
-    content: attr(data-content) '/////'
-  }
+  border: none;
+  border-top: 1px solid var(--text-secondary);
+  margin: 2rem 0;
+  opacity: 0.3;
 }
 
-table {
-  width: 100%;
-}
-
-table,
-th,
-td {
-  border: thin solid black;
-  border-collapse: collapse;
-  padding: 0.4rem;
-}
-
+// -------------- CODE -------------- //
 code {
-  color: white;
-  background: black;
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
 }
 
 div.highlighter-rouge code {
@@ -111,10 +149,13 @@ div.highlighter-rouge code {
   padding: 1rem;
 }
 
+// -------------- OTHER -------------- //
 blockquote {
   font-style: italic;
-  border: thin solid black;
-  padding: 1rem;
+  border-left: 2px solid var(--text-secondary);
+  padding-left: 1rem;
+  margin-left: 0;
+  color: var(--text-secondary);
 
   p {
     margin: 0;
@@ -125,4 +166,33 @@ img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid var(--text-secondary);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.post-meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+// -------------- BACK LINK -------------- //
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--text);
+  }
 }
