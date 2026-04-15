@@ -3,12 +3,11 @@ remote_theme: riggraz/no-style-please # for production
 
 title: Pavel Vlasikhin
 author: Pavel Vlasikhin
-email: pavel@vlasikhin.com
-url: https://vlasikhin.com/
+url: https://vlasikhin.com
 baseurl: ""
 description: >
-  Experienced Ruby on Rails developer who is enthusiastic about writing clean, efficient, and accessible code.
-  Have vast experience in web design for a variety of corporate clients.
+  Backend Engineer — Ruby / Go, AI-assisted development.
+  Independent contractor available for remote work worldwide.
 
 permalink: "/:slug"
 
@@ -22,3 +21,11 @@ theme_config:
 
 sass:
   style: "compressed"
+
+exclude:
+  - CLAUDE.md
+  - README.md
+  - LICENSE.txt
+  - Gemfile
+  - Gemfile.lock
+  - vendor
