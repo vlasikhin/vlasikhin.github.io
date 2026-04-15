@@ -1,11 +1,9 @@
 entries:
   - title: cv
-    url: cv/cv
+    url: /cv/
   - title: github
     url: https://github.com/vlasikhin
-  - title: telegram
-    url: https://t.me/pavluar
   - title: linkedin
     url: https://linkedin.com/in/vlasikhin
-  - title: email
-    url: mailto:pavel@vlasikhin.com
+  - title: telegram
+    url: https://t.me/pavluar

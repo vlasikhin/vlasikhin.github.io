@@ -1,57 +1,60 @@
 ---
 layout: page
-title: Pavel Vlasikhin
+title: Pavel Vlasikhin — CV
+subtitle: curriculum vitae
+permalink: /cv/
 ---
 
-## ABOUT ME
+## ABOUT
 
-Experienced Ruby on Rails developer who is enthusiastic about writing clean, efficient, and accessible code.
-Have vast experience in web design for a variety of corporate clients.
+Independent IT service provider specializing in backend software development and
+system integration. Over 10 years of experience in web technologies with a strong
+focus on the Ruby on Rails ecosystem, enhanced with modern AI-assisted development
+workflows. Working fully remotely with international B2B clients in the EU and USA.
+
+<a href="/cv/cv_pavel_vlasikhin.pdf" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a>
+
+## SERVICES
+
+- Backend software development and architecture (Ruby, Ruby on Rails, Go)
+- System integration, API development, and third-party service connectivity
+- Database design, optimization, and data pipeline engineering
+- Code review, quality assurance, and technical troubleshooting
+- Infrastructure support: containerization, CI/CD, deployment automation
+- AI-assisted development and automation using Claude Code and LLM-based agents
 
 ## EXPERIENCE
 
-### Ruby on Rails developer
-<p> OCTOBER 2019 - PRESENT </p>
+### Independent Contractor — Backend Development Services
 
-- **role:** Ruby, Ruby on Rails developer, full-time, remote
-- **company:** <a href="https://machinio.com" target="_blank">machinio.com</a>
-- **details:** Develop backend on ruby language, using framework rails.
-- **technologies_used:** Ruby, Ruby on Rails, Postgress, Docker
+<p>OCTOBER 2019 — PRESENT</p>
 
-### Ruby developer
- <p> JUNE 2018 - OCTOBER 2019 (1 year 6 month) </p>
+- **clients:** International IT clients (USA, Europe)
+- **scope:** Backend development, system integration, web scraping, and data
+  processing delivered under B2B service agreements on a project basis
+- **workflow:** Fully remote, milestone-based delivery, AI-assisted development
+  workflows (Claude Code, LLM agents) integrated into daily practice
+- **stack:** Ruby, Ruby on Rails, Go, PostgreSQL, Redis, Docker, AWS
 
-- **role:** Ruby developer, full-time, office, remote
-- **company:** <a href="https://3commas.io" target="_blank">3commas.io</a>
-- **details:** Develop backend on ruby language, using framework rails. Working with backend data processes for crypto trading automatisation tools.
-- **technologies_used:** Ruby, Ruby on Rails, Postgress, Docker, AWS, Go
+### Software Development Services (prior engagements)
 
-### Ruby developer
- <p> JUNE 2016 - JUNE 2018 (2 years) </p>
+<p>2016 — 2019</p>
 
-- **role:** Ruby developer, full-time, office, remote
-- **company:** SPB TV, <a href= "https://amediateka.ru" target="_blank">amediateka.ru</a>
-- **details:** Working with backend data processes. Main project - Amediateka, the leading Russian broadcaster.
-- **technologies_used:** Ruby, Ruby on Rails, Postgress, Docker, AWS
-
-### Ruby Developer
-  <p> MAY 2016 - JUNE 2018 (2 year 1 month) </p>
-
-- **role:** Ruby developer, part-time, remote
-- **company:** <a href="https://machinio.com" target="_blank">machinio.com</a>
-- **details:** Web Scraping
-- **technologies_used:** Ruby, Bash, Docker
+- Backend development for media streaming and crypto-trading platforms
+- Web application development, API integration, and data processing solutions
+- Cross-functional collaboration using Agile / Scrum methodologies
 
 ## SKILLS
 
-- **languages:** Ruby, Go, SQL
-- **frameworks:** Ruby on Rails, Rspec
-- **tools:** Git, Docker, AWS, Heroku, Ansible, Capistrano
-- **operating systems:** Linux, MacOS
-- **databases:** Postgres, MySQL, Redis
-- **other:** RabbitMQ, Sidekiq, Nginx, Puma, Bash
+- **core:** Ruby, Ruby on Rails, SQL, PostgreSQL, Redis, Git, RSpec — 10+ years
+- **infrastructure:** Docker, AWS, Ansible, Consul, CI/CD, Linux — 5+ years
+- **ai-assisted development:** Claude Code (advanced usage), LLM agents and
+  agentic workflows, MCP (Model Context Protocol) servers, prompt engineering,
+  AI-driven code review and refactoring
+- **additional:** Go, Elixir, RabbitMQ, JavaScript, REST API design, GraphQL
+- **methodologies:** Agile / Scrum, code review workflows, Jira, GitHub / GitLab
 
 ## EDUCATION
 
-- **Ruby on Rails advanced development** (2015 - 2016), <a href="https://thinknetica.com" target="_blank">Thinknetica</a>
-- **Computer Science** (2001 - 2007), MUH, Kirov
+- **Ruby on Rails Advanced Development** (2016), [Thinknetica](https://thinknetica.com)
+- **Computer Science and Engineering** (2001 — 2007), Moscow University of Humanities, Kirov
