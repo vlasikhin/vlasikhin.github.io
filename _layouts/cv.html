@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+
+<title>{{ page.title | default: site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
+<meta name="author" content="Pavel Vlasikhin">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="Backend Engineer · Ruby / Go · AI-assisted development. Independent contractor, remote worldwide.">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/icon-512.png">
+
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --fg: #f5f1e8;
+    --fg-dim: #8a8578;
+    --accent: #ff5c1e;
+    --rule: #1a1a1a;
+    --sans: "Inter Tight", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f5f1e8;
+      --fg: #0a0a0a;
+      --fg-dim: #5a564a;
+      --rule: #e0dccf;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    position: relative;
+    min-height: 100vh;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 80% 0%, color-mix(in oklab, var(--accent), transparent 92%), transparent 60%),
+      radial-gradient(ellipse 60% 80% at 0% 100%, color-mix(in oklab, var(--accent), transparent 95%), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(24px, 5vw, 48px) clamp(20px, 4vw, 32px) clamp(48px, 8vw, 96px);
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    padding-bottom: clamp(32px, 5vw, 48px);
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .top b { color: var(--fg); }
+  .top a {
+    color: var(--fg-dim);
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+    transition: color .2s, border-color .2s;
+  }
+  .top a:hover,
+  .top a:focus-visible { color: var(--accent); border-color: var(--accent); }
+
+  header.lede {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: clamp(24px, 4vw, 40px) 0;
+    margin-bottom: clamp(28px, 4vw, 44px);
+  }
+  header.lede h1 {
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0 0 12px;
+  }
+  header.lede .subtitle {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    margin: 0 0 18px;
+  }
+  header.lede .meta {
+    display: flex; flex-wrap: wrap; gap: 18px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+  header.lede .meta .status { display: inline-flex; align-items: center; gap: 8px; }
+  header.lede .meta .status .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #4ade80;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    header.lede .meta .status .dot { animation: none; }
+  }
+
+  .content h2 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    margin: clamp(36px, 5vw, 52px) 0 clamp(14px, 2vw, 18px);
+    padding-top: clamp(28px, 4vw, 40px);
+    border-top: 1px solid var(--rule);
+  }
+  .content h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+
+  .content h3 {
+    font-size: clamp(18px, 2vw, 20px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: clamp(20px, 3vw, 28px) 0 6px;
+    color: var(--fg);
+  }
+
+  .content p {
+    margin: 0 0 1em;
+    color: var(--fg);
+  }
+  .content p + p { margin-top: -0.25em; }
+
+  .content ul {
+    margin: 0 0 1.25em;
+    padding-left: 1.1em;
+  }
+  .content li {
+    margin: 0.25em 0;
+    color: var(--fg);
+  }
+  .content li::marker { color: var(--accent); }
+
+  .content strong, .content b { font-weight: 600; color: var(--fg); }
+  .content em, .content i { color: var(--fg-dim); font-style: italic; }
+
+  .content a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in oklab, var(--accent), transparent 60%);
+    transition: border-color .2s;
+  }
+  .content a:hover,
+  .content a:focus-visible { border-color: var(--accent); }
+
+  .content p > a[href$=".pdf"] {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    margin-top: 6px;
+  }
+  .content p > a[href$=".pdf"]:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  .content hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: clamp(32px, 4vw, 48px) 0;
+  }
+
+  footer.foot {
+    margin-top: clamp(48px, 8vw, 80px);
+    padding-top: clamp(20px, 3vw, 28px);
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer.foot a {
+    color: var(--fg-dim);
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+  }
+  footer.foot a:hover,
+  footer.foot a:focus-visible { color: var(--accent); border-color: var(--accent); }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  ::selection { background: var(--accent); color: var(--bg); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <nav class="top" aria-label="Breadcrumb">
+    <span><b>VLASIKHIN</b> · {{ page.subtitle | default: "curriculum vitae" | upcase }}</span>
+    <a href="/">← back</a>
+  </nav>
+
+  <header class="lede">
+    <h1>Pavel Vlasikhin</h1>
+    <p class="subtitle">Backend Engineer · Ruby / Go · AI-assisted development</p>
+    <div class="meta">
+      <span class="status"><span class="dot" aria-hidden="true"></span> Available for contract</span>
+    </div>
+  </header>
+
+  <article class="content">
+    {{ content }}
+  </article>
+
+  <footer class="foot">
+    <span>© {{ site.time | date: '%Y' }} Pavel Vlasikhin</span>
+    <a href="/">vlasikhin.com</a>
+  </footer>
+
+</div>
+
+</body>
+</html>

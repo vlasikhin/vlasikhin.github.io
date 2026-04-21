@@ -1,26 +1,14 @@
-remote_theme: riggraz/no-style-please # for production
-# theme: no-style-please # for developing locally
-
 title: Pavel Vlasikhin
 author: Pavel Vlasikhin
 url: https://vlasikhin.com
 baseurl: ""
 description: >
-  Backend Engineer — Ruby / Go, AI-assisted development.
+  Backend Engineer - Ruby / Go, AI-assisted development.
   Independent contractor available for remote work worldwide.
 
 permalink: "/:slug"
 
 favicon: "favicon.ico"
-
-theme_config:
-  appearance: "auto"
-  back_home_text: "<<"
-  date_format: "%d-%m-%Y"
-  show_description: false
-
-sass:
-  style: "compressed"
 
 exclude:
   - CLAUDE.md

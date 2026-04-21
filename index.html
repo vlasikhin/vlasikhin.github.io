@@ -1,3 +1,236 @@
----
-layout: home
----
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+
+<title>Pavel Vlasikhin — Backend Engineer</title>
+<meta name="description" content="Pavel Vlasikhin — Backend Engineer. Ruby / Go, AI-assisted development. Independent contractor available for remote work worldwide.">
+<meta name="author" content="Pavel Vlasikhin">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pavel Vlasikhin — Backend Engineer">
+<meta property="og:description" content="Backend Engineer · Ruby / Go · AI-assisted development. Independent contractor, remote worldwide.">
+<meta property="og:url" content="https://vlasikhin.com">
+<meta property="og:image" content="https://vlasikhin.com/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://vlasikhin.com/">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --fg: #f5f1e8;
+    --fg-dim: #8a8578;
+    --accent: #ff5c1e;
+    --rule: #1a1a1a;
+    --sans: "Inter Tight", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f5f1e8;
+      --fg: #0a0a0a;
+      --fg-dim: #5a564a;
+      --rule: #e0dccf;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    display: grid;
+    place-items: center;
+    padding: clamp(16px, 3vw, 32px);
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 80% 20%, color-mix(in oklab, var(--accent), transparent 85%), transparent 60%),
+      radial-gradient(ellipse 60% 80% at 10% 90%, color-mix(in oklab, var(--accent), transparent 92%), transparent 60%);
+    pointer-events: none;
+  }
+  .card {
+    width: min(95vw, 1000px);
+    aspect-ratio: 16/10;
+    max-height: 92vh;
+    background:
+      linear-gradient(135deg, color-mix(in oklab, var(--fg), transparent 97%) 0%, transparent 50%),
+      var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: clamp(28px, 4vw, 56px);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: clamp(16px, 2.5vw, 28px);
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 40px 80px -40px rgba(0,0,0,.6),
+      0 0 0 1px color-mix(in oklab, var(--accent), transparent 90%);
+  }
+  .card::after {
+    content: "";
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 60%; height: 200%;
+    background: radial-gradient(ellipse, color-mix(in oklab, var(--accent), transparent 88%), transparent 60%);
+    pointer-events: none;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: clamp(10px, 1vw, 12px);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    z-index: 1;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .top b { color: var(--fg); }
+  .status { display: inline-flex; align-items: center; gap: 8px; }
+  .status .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #4ade80;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .status .dot { animation: none; }
+  }
+  .center { display: grid; align-content: end; z-index: 1; }
+  h1 {
+    font-size: clamp(44px, 8.5vw, 128px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin: 0;
+    text-wrap: balance;
+    display: flex;
+    align-items: baseline;
+    gap: 0.25em;
+    flex-wrap: wrap;
+  }
+  h1 .given { font-weight: 500; color: var(--fg); }
+  h1 .sur   { font-weight: 700; color: var(--fg); }
+  .tagline {
+    font-size: clamp(14px, 1.6vw, 20px);
+    font-weight: 400;
+    color: var(--fg-dim);
+    margin: clamp(12px, 1.8vw, 20px) 0 0;
+    max-width: 52ch;
+    line-height: 1.4;
+  }
+  .tagline b { color: var(--fg); font-weight: 500; }
+  .bottom {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    z-index: 1;
+    border-top: 1px solid var(--rule);
+    padding-top: clamp(14px, 2vw, 20px);
+  }
+  .links {
+    display: flex; flex-wrap: wrap; gap: clamp(10px, 2vw, 24px);
+    font-family: var(--mono);
+    font-size: clamp(11px, 1.1vw, 13px);
+    letter-spacing: 0.02em;
+  }
+  .links a {
+    color: var(--fg);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    border-bottom: 1px solid color-mix(in oklab, var(--fg-dim), transparent 50%);
+    transition: color .2s, border-color .2s;
+  }
+  .links a:hover,
+  .links a:focus-visible { color: var(--accent); border-color: var(--accent); }
+  .links a.email { color: var(--accent); border-color: var(--accent); font-weight: 500; }
+  .stamp {
+    font-family: var(--mono);
+    font-size: clamp(9px, 0.9vw, 11px);
+    letter-spacing: 0.2em;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 1.6;
+  }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Pavel Vlasikhin",
+  "url": "https://vlasikhin.com",
+  "jobTitle": "Backend Engineer",
+  "description": "Independent contractor specializing in backend software development (Ruby, Ruby on Rails, Go) and AI-assisted development workflows.",
+  "knowsAbout": ["Ruby", "Ruby on Rails", "Go", "PostgreSQL", "Docker", "AWS", "AI-assisted development", "Claude Code", "LLM agents"],
+  "sameAs": [
+    "https://github.com/vlasikhin",
+    "https://linkedin.com/in/vlasikhin",
+    "https://t.me/pavluar"
+  ]
+}
+</script>
+</head>
+<body>
+
+<main class="card" aria-label="Pavel Vlasikhin — backend engineer business card">
+  <div class="top">
+    <span><b>VLASIKHIN</b> · BACKEND ENGINEER</span>
+    <span class="status"><span class="dot" aria-hidden="true"></span> AVAILABLE FOR CONTRACT</span>
+  </div>
+
+  <div class="center">
+    <h1><span class="given">Pavel</span><span class="sur">Vlasikhin</span></h1>
+    <p class="tagline">
+      I ship production <b>Ruby and Go</b> backends for teams that need careful, AI-assisted engineering — not another prototype. Independent contractor. Remote, worldwide.
+    </p>
+  </div>
+
+  <div class="bottom">
+    <div class="links">
+      <a class="email" href="#" data-c="cGF2ZWxAdmxhc2lraGluLmNvbQ==" onclick="this.href='mai'+'lto:'+atob(this.dataset.c)+'?subject=Contract%20work%20inquiry'">email</a>
+      <a href="https://github.com/vlasikhin" target="_blank" rel="me noopener noreferrer">github</a>
+      <a href="https://linkedin.com/in/vlasikhin" target="_blank" rel="me noopener noreferrer">linkedin</a>
+      <a href="https://t.me/pavluar" target="_blank" rel="me noopener noreferrer">telegram</a>
+      <a href="/cv/">cv</a>
+    </div>
+    <div class="stamp">
+      Est. 2014<br>
+      10 years of backend
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

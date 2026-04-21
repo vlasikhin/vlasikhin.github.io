@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: cv
 title: Pavel Vlasikhin — CV
 subtitle: curriculum vitae
 permalink: /cv/
