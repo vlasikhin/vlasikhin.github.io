@@ -183,6 +183,31 @@
     line-height: 1.6;
   }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  @media (max-width: 820px) {
+    html, body { height: auto; overflow: auto; }
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      align-items: start;
+      padding: clamp(12px, 3vw, 24px);
+    }
+    .card {
+      aspect-ratio: auto;
+      max-height: none;
+      width: 100%;
+      min-height: calc(100dvh - 2 * clamp(12px, 3vw, 24px));
+      padding: clamp(24px, 6vw, 40px);
+      gap: clamp(20px, 5vw, 32px);
+    }
+    h1 { font-size: clamp(44px, 12vw, 76px); }
+    .tagline { font-size: clamp(14px, 4vw, 18px); }
+    .bottom {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .stamp { text-align: left; }
+  }
 </style>
 
 <script type="application/ld+json">
