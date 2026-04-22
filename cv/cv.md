@@ -10,7 +10,7 @@ permalink: /cv/
 Independent IT service provider specializing in backend software development and
 system integration. Over 10 years of experience in web technologies with a strong
 focus on the Ruby on Rails ecosystem, enhanced with modern AI-assisted development
-workflows. Working fully remotely with international B2B clients in the EU and USA.
+workflows. Working fully remote worldwide.
 
 <a href="/cv/cv_pavel_vlasikhin.pdf" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a>
 
@@ -53,6 +53,12 @@ workflows. Working fully remotely with international B2B clients in the EU and U
   AI-driven code review and refactoring
 - **additional:** Go, Elixir, RabbitMQ, JavaScript, REST API design, GraphQL
 - **methodologies:** Agile / Scrum, code review workflows, Jira, GitHub / GitLab
+
+## LANGUAGES
+
+- **English** — C1, primary working language for 10+ years
+- **Russian** — Native
+- **Spanish** — A2/B1, conversational
 
 ## EDUCATION
 
