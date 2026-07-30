@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+
+<title>Privacy Policy — Open in Opener Tab Group</title>
+<meta name="description" content="Privacy policy for the Open in Opener Tab Group Chrome extension.">
+<meta name="author" content="Pavel Vlasikhin">
+
+<link rel="canonical" href="https://www.vlasikhin.com/open-in-opener-tab-group/privacy/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --fg: #f5f1e8;
+    --fg-dim: #9b968a;
+    --accent: #ff5c1e;
+    --rule: #242424;
+    --sans: "Inter Tight", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f5f1e8;
+      --fg: #0a0a0a;
+      --fg-dim: #5a564a;
+      --rule: #d9d4c7;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(ellipse 55% 40% at 90% 0%, color-mix(in oklab, var(--accent), transparent 88%), transparent 70%),
+      var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  main {
+    width: min(100% - 32px, 780px);
+    margin: 0 auto;
+    padding: clamp(32px, 7vw, 80px) 0;
+  }
+  .eyebrow,
+  .updated {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .eyebrow {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .eyebrow:hover,
+  .eyebrow:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  header {
+    padding: clamp(42px, 8vw, 84px) 0 clamp(36px, 6vw, 64px);
+    border-bottom: 1px solid var(--rule);
+  }
+  h1 {
+    max-width: 14ch;
+    margin: 16px 0 20px;
+    font-size: clamp(44px, 8vw, 76px);
+    font-weight: 600;
+    line-height: .98;
+    letter-spacing: -.04em;
+    text-wrap: balance;
+  }
+  .updated { color: var(--fg-dim); }
+  article {
+    font-size: clamp(17px, 2.3vw, 20px);
+    line-height: 1.62;
+  }
+  section {
+    padding: 34px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  h2 {
+    margin: 0 0 14px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -.015em;
+  }
+  p { margin: 0 0 16px; }
+  p:last-child { margin-bottom: 0; }
+  ul {
+    margin: 0;
+    padding-left: 1.2em;
+  }
+  li + li { margin-top: 8px; }
+  code {
+    font-family: var(--mono);
+    font-size: .78em;
+    color: var(--accent);
+  }
+  a {
+    color: inherit;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 4px;
+  }
+  a:hover,
+  a:focus-visible { color: var(--accent); }
+  footer {
+    padding-top: 34px;
+    color: var(--fg-dim);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <a class="eyebrow" href="/">Pavel Vlasikhin</a>
+
+  <header>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Open in Opener Tab Group · Updated July 30, 2026</div>
+  </header>
+
+  <article>
+    <section>
+      <p>Open in Opener Tab Group keeps tabs opened from links together with their source tab in a native Chrome tab group.</p>
+    </section>
+
+    <section>
+      <h2>Data handled</h2>
+      <p>To perform this function, the extension temporarily processes:</p>
+      <ul>
+        <li>The source tab title</li>
+        <li>Tab, window, and tab-group identifiers supplied by Chrome</li>
+        <li>Navigation metadata supplied by Chrome when a page opens a new tab</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How data is used</h2>
+      <p>This information is used only to identify the source and destination tabs, place them in the correct native Chrome tab group, and name a new group after the source page.</p>
+    </section>
+
+    <section>
+      <h2>Storage and sharing</h2>
+      <p>All processing happens locally in Chrome. The extension does not store browsing data, send data over the network, use analytics, create accounts, sell data, or share data with third parties.</p>
+    </section>
+
+    <section>
+      <h2>Retention</h2>
+      <p>No user data is retained by the extension.</p>
+    </section>
+
+    <section>
+      <h2>Permissions</h2>
+      <ul>
+        <li><code>tabs</code> reads the source tab title and its window and group identifiers.</li>
+        <li><code>tabGroups</code> creates, updates, and names native Chrome tab groups.</li>
+        <li><code>webNavigation</code> detects new tabs that were opened by a webpage.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Changes</h2>
+      <p>If this policy changes, the updated version and date will be published at this location.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Privacy questions can be sent to <a href="mailto:pavel@vlasikhin.com">pavel@vlasikhin.com</a>.</p>
+    </section>
+  </article>
+
+  <footer>
+    The use of information received from Chrome APIs adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.
+  </footer>
+</main>
+
+</body>
+</html>
