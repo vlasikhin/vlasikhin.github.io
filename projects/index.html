@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+
+<title>Projects — Pavel Vlasikhin</title>
+<meta name="description" content="Side projects by Pavel Vlasikhin — warna.day, a multilingual color-of-the-day app, and Hosts, a syntax highlighting extension for the Zed editor.">
+<meta name="author" content="Pavel Vlasikhin">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projects — Pavel Vlasikhin">
+<meta property="og:description" content="Side projects — warna.day, a multilingual color-of-the-day app, and Hosts, a syntax highlighting extension for the Zed editor.">
+<meta property="og:url" content="https://www.vlasikhin.com/projects/">
+<meta property="og:image" content="https://www.vlasikhin.com/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://www.vlasikhin.com/projects/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --fg: #f5f1e8;
+    --fg-dim: #9b968a;
+    --accent: #ff5c1e;
+    --rule: #242424;
+    --sans: "Inter Tight", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f5f1e8;
+      --fg: #0a0a0a;
+      --fg-dim: #5a564a;
+      --rule: #d9d4c7;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(ellipse 55% 40% at 90% 0%, color-mix(in oklab, var(--accent), transparent 88%), transparent 70%),
+      var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  main {
+    width: min(100% - 32px, 780px);
+    margin: 0 auto;
+    padding: clamp(32px, 7vw, 80px) 0;
+  }
+  .eyebrow,
+  .lede,
+  .meta,
+  .stack {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .eyebrow {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .eyebrow:hover,
+  .eyebrow:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  header {
+    padding: clamp(42px, 8vw, 84px) 0 clamp(36px, 6vw, 64px);
+    border-bottom: 1px solid var(--rule);
+  }
+  h1 {
+    max-width: 14ch;
+    margin: 16px 0 20px;
+    font-size: clamp(44px, 8vw, 76px);
+    font-weight: 600;
+    line-height: .98;
+    letter-spacing: -.04em;
+    text-wrap: balance;
+  }
+  .lede { color: var(--fg-dim); }
+  .project {
+    padding: 34px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .meta { color: var(--fg-dim); }
+  .meta .live { color: var(--accent); }
+  h2 {
+    margin: 12px 0 14px;
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 600;
+    letter-spacing: -.025em;
+  }
+  h2 a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid color-mix(in oklab, var(--accent), transparent 60%);
+    transition: border-color .2s, color .2s;
+  }
+  h2 a:hover,
+  h2 a:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .project p {
+    margin: 0 0 18px;
+    font-size: clamp(17px, 2.3vw, 20px);
+    line-height: 1.62;
+    max-width: 62ch;
+  }
+  .project code {
+    font-family: var(--mono);
+    font-size: .78em;
+    color: var(--accent);
+  }
+  .stack {
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    color: var(--fg-dim);
+  }
+  .stack li:not(:last-child)::after {
+    content: "·";
+    margin-left: 14px;
+    color: color-mix(in oklab, var(--fg-dim), transparent 40%);
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+  .links a {
+    color: var(--fg);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid color-mix(in oklab, var(--fg-dim), transparent 50%);
+    transition: color .2s, border-color .2s;
+  }
+  .links a:hover,
+  .links a:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  footer {
+    padding-top: 34px;
+    color: var(--fg-dim);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  footer a {
+    color: inherit;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 4px;
+  }
+  footer a:hover,
+  footer a:focus-visible { color: var(--accent); }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <a class="eyebrow" href="/">Pavel Vlasikhin</a>
+
+  <header>
+    <h1>Projects</h1>
+    <div class="lede">Things I build outside client work</div>
+  </header>
+
+  <section class="project">
+    <div class="meta">Web app · <span class="live">Live</span></div>
+    <h2><a href="https://warna.day" target="_blank" rel="noopener noreferrer">warna.day</a></h2>
+    <p>
+      A color of the day. Every month-and-day pair — all 366 of them, February 29 included — maps
+      to one deterministic color with a generated name. No year enters the formula, so a given date
+      always returns the same color. Available in English, Russian and Spanish.
+    </p>
+    <ul class="stack">
+      <li>Ruby</li>
+      <li>Rails 8</li>
+      <li>Propshaft</li>
+      <li>Tailwind</li>
+      <li>SQLite</li>
+      <li>Solid Queue</li>
+    </ul>
+    <div class="links">
+      <a href="https://warna.day" target="_blank" rel="noopener noreferrer">warna.day</a>
+    </div>
+  </section>
+
+  <section class="project">
+    <div class="meta">Editor extension · <span class="live">Published</span></div>
+    <h2><a href="https://github.com/vlasikhin/zed-hosts" target="_blank" rel="noopener noreferrer">Hosts for Zed</a></h2>
+    <p>
+      Syntax highlighting for <code>/etc/hosts</code> files in the Zed editor — full-line and inline
+      comments, IPv4 and IPv6 addresses, hostnames. Available from Zed's extension panel; the
+      Tree-sitter grammar behind it lives in its own repository.
+    </p>
+    <ul class="stack">
+      <li>Tree-sitter</li>
+      <li>Zed extension API</li>
+    </ul>
+    <div class="links">
+      <a href="https://github.com/vlasikhin/zed-hosts" target="_blank" rel="noopener noreferrer">zed-hosts</a>
+      <a href="https://github.com/vlasikhin/tree-sitter-hosts" target="_blank" rel="noopener noreferrer">tree-sitter-hosts</a>
+    </div>
+  </section>
+
+  <footer>
+    More on <a href="https://github.com/vlasikhin" target="_blank" rel="noopener noreferrer">GitHub</a>.
+  </footer>
+</main>
+
+</body>
+</html>
