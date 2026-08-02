@@ -6,12 +6,12 @@
 <meta name="color-scheme" content="dark light">
 
 <title>Projects — Pavel Vlasikhin</title>
-<meta name="description" content="Side projects by Pavel Vlasikhin — warna.day, a multilingual color-of-the-day app, Hosts for the Zed editor, Open in Opener Tab Group for Chrome, and Aethra, a Sublime Text color scheme.">
+<meta name="description" content="Side projects by Pavel Vlasikhin — warna.day, extensions for the Zed editor and Chrome, a Sublime Text color scheme, and a Ruby gem for the Outline VPN API.">
 <meta name="author" content="Pavel Vlasikhin">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Projects — Pavel Vlasikhin">
-<meta property="og:description" content="Side projects — warna.day, Hosts for the Zed editor, Open in Opener Tab Group for Chrome, and Aethra for Sublime Text.">
+<meta property="og:description" content="Side projects — warna.day, extensions for Zed and Chrome, a Sublime Text color scheme, and a Ruby gem for the Outline VPN API.">
 <meta property="og:url" content="https://www.vlasikhin.com/projects/">
 <meta property="og:image" content="https://www.vlasikhin.com/icon-512.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -126,6 +126,13 @@
     font-size: .78em;
     color: var(--accent);
   }
+  .project p a {
+    color: inherit;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 4px;
+  }
+  .project p a:hover,
+  .project p a:focus-visible { color: var(--accent); }
   .stack {
     margin: 0 0 18px;
     padding: 0;
@@ -266,6 +273,26 @@
     <div class="links">
       <a href="https://packagecontrol.io/packages/Aethra%20Color%20Scheme" target="_blank" rel="noopener noreferrer">package control</a>
       <a href="https://github.com/vlasikhin/Aethra" target="_blank" rel="noopener noreferrer">source</a>
+    </div>
+  </section>
+
+  <section class="project">
+    <div class="meta">Ruby gem · <span class="live">Published</span></div>
+    <h2><a href="https://rubygems.org/gems/outline_vpn_api" target="_blank" rel="noopener noreferrer">outline_vpn_api</a></h2>
+    <p>
+      A Ruby wrapper around the management API of an <a href="https://getoutline.org" target="_blank" rel="noopener noreferrer">Outline</a>
+      VPN server. Creates, renames and deletes access keys, sets per-key data limits, and reads
+      transfer metrics — enough to drive a server from a script or a scheduled job rather than the
+      Outline Manager app.
+    </p>
+    <ul class="stack">
+      <li>Ruby 3.2+</li>
+      <li>HTTParty</li>
+      <li>RSpec</li>
+    </ul>
+    <div class="links">
+      <a href="https://rubygems.org/gems/outline_vpn_api" target="_blank" rel="noopener noreferrer">rubygems</a>
+      <a href="https://github.com/vlasikhin/outline_vpn_api" target="_blank" rel="noopener noreferrer">source</a>
     </div>
   </section>
 
