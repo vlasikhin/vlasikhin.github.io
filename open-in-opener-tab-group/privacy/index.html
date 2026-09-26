@@ -136,7 +136,7 @@
 
   <header>
     <h1>Privacy Policy</h1>
-    <div class="updated">Open in Opener Tab Group · Updated July 30, 2026</div>
+    <div class="updated">Open in Opener Tab Group · Updated September 26, 2026</div>
   </header>
 
   <article>
@@ -151,22 +151,23 @@
         <li>The source tab title</li>
         <li>Tab, window, and tab-group identifiers supplied by Chrome</li>
         <li>Navigation metadata supplied by Chrome when a page opens a new tab</li>
+        <li>The number of tabs in each tab group, to find a group left with a single tab</li>
       </ul>
     </section>
 
     <section>
       <h2>How data is used</h2>
-      <p>This information is used only to identify the source and destination tabs, place them in the correct native Chrome tab group, and name a new group after the source page.</p>
+      <p>This information is used only to identify the source and destination tabs, place them in the correct native Chrome tab group, name a new group after the source page, and, if enabled, ungroup a tab left alone in its group.</p>
     </section>
 
     <section>
       <h2>Storage and sharing</h2>
-      <p>All processing happens locally in Chrome. The extension does not store browsing data, send data over the network, use analytics, create accounts, sell data, or share data with third parties.</p>
+      <p>All processing happens locally in Chrome. The extension stores only the ungroup setting chosen on its options page (synced by Chrome with your other extension settings) and, for the current browser session, the identifiers of tab groups it created. It does not store browsing data, send data over the network, use analytics, create accounts, sell data, or share data with third parties.</p>
     </section>
 
     <section>
       <h2>Retention</h2>
-      <p>No user data is retained by the extension.</p>
+      <p>Tab-group identifiers are cleared when the browser closes. The ungroup setting is kept until you change it or remove the extension. No other user data is retained.</p>
     </section>
 
     <section>
@@ -174,6 +175,7 @@
       <ul>
         <li><code>tabs</code> reads the source tab title and its window and group identifiers.</li>
         <li><code>tabGroups</code> creates, updates, and names native Chrome tab groups.</li>
+        <li><code>storage</code> saves the ungroup setting and the identifiers of groups the extension created.</li>
         <li><code>webNavigation</code> detects new tabs that were opened by a webpage.</li>
       </ul>
     </section>
