@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+
+<title>Chord Clock — Pavel Vlasikhin</title>
+<meta name="description" content="Chord Clock: build chords on a clock of 12 notes, hear them, see the semitone gaps between their notes and learn correct letter spelling. In English and Russian.">
+<meta name="author" content="Pavel Vlasikhin">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chord Clock — Pavel Vlasikhin">
+<meta property="og:description" content="Build chords on a clock of 12 notes, hear them, see the semitone gaps between their notes and learn correct letter spelling.">
+<meta property="og:url" content="https://www.vlasikhin.com/chord-clock/">
+<meta property="og:image" content="https://www.vlasikhin.com/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://www.vlasikhin.com/chord-clock/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    color-scheme: dark light;
+    --bg: #0a0a0a;
+    --fg: #f5f1e8;
+    --fg-dim: #9b968a;
+    --rule: #242424;
+    --accent: #ff5c1e;
+    --accent-dark: #e64e12;
+    --accent-soft: #ffb69a;
+    --surface: #121212;
+    --key-white: #e8e3d6;
+    --key-black: #1f1e1b;
+    --key-black-edge: #45423b;
+    --sans: "Inter Tight", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f5f1e8;
+      --fg: #0a0a0a;
+      --fg-dim: #5a564a;
+      --rule: #d9d4c7;
+      --surface: #faf8f3;
+      --key-white: #fffdf8;
+      --key-black: #1c1b18;
+      --key-black-edge: #1c1b18;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { background: var(--bg); }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(ellipse 55% 40% at 90% 0%, color-mix(in oklab, var(--accent), transparent 88%), transparent 70%),
+      var(--bg);
+    color: var(--fg);
+    font: 15px/1.4 var(--sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .app {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 18px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .eyebrow, .lede {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .eyebrow { color: var(--accent); text-decoration: none; }
+  .eyebrow:hover, .eyebrow:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+  .lede { color: var(--fg-dim); }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 10px 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .titles { display: flex; flex-direction: column; gap: 6px; }
+  h1 { margin: 0; font-size: 34px; font-weight: 600; line-height: 1; letter-spacing: -.035em; }
+  .settings { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+  .lang { display: flex; align-items: center; gap: 6px; color: var(--fg-dim); font-family: var(--mono); font-size: 12px; }
+
+  main { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; }
+  #clock { flex: none; width: min(460px, 56vh, 100%); height: auto; user-select: none; }
+  .side { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+
+  button {
+    font: inherit;
+    color: var(--fg);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 5px 11px;
+    cursor: pointer;
+    transition: color .2s, border-color .2s;
+  }
+  button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+  button:disabled { opacity: .4; cursor: default; }
+  button.active { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+  #play { background: var(--accent); border-color: var(--accent); color: #fff; }
+  #play:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+  .lang button {
+    padding: 2px 0;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    background: none;
+    color: var(--fg-dim);
+    letter-spacing: .1em;
+  }
+  .lang button.active { background: none; color: var(--fg); border-bottom-color: var(--accent); }
+
+  label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; user-select: none; }
+  label:has(input:disabled) { opacity: .4; cursor: default; }
+  input[type="checkbox"] { width: 16px; height: 16px; margin: 0; accent-color: var(--accent); }
+
+  .types, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .types button { font-family: var(--mono); font-size: 13px; }
+  .actions { gap: 8px 12px; }
+
+  .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 12px 18px 14px; }
+  .title { display: flex; align-items: center; gap: 12px; }
+  .symbol { font-size: 36px; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; }
+  .title button { margin-left: auto; font-family: var(--mono); font-size: 13px; }
+  .legend { min-height: 20px; color: var(--fg-dim); font-family: var(--mono); font-size: 12.5px; }
+
+  table { width: 100%; margin-top: 6px; border-collapse: collapse; table-layout: fixed; }
+  th {
+    width: 112px;
+    padding: 4px 0;
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+  td { padding: 4px 8px 4px 0; vertical-align: top; overflow-wrap: anywhere; }
+  tr.notes td { font-size: 22px; font-weight: 700; }
+  tr.notes td.root { color: var(--accent); }
+  tr.intervals td { font-size: 12.5px; line-height: 1.3; color: var(--fg-dim); }
+
+  .face { fill: none; stroke: var(--rule); stroke-width: 1.5; }
+  .node { cursor: pointer; }
+  .node circle { stroke-width: 1.5; }
+  .node.white circle { fill: var(--key-white); stroke: #b9b3a4; }
+  .node.black circle { fill: var(--key-black); stroke: var(--key-black-edge); }
+  .node.white text { fill: #0a0a0a; }
+  .node.black text { fill: #f5f1e8; }
+  .node.tone circle { stroke: var(--accent); stroke-width: 4; }
+  .node.root circle { fill: var(--accent); stroke: var(--accent); stroke-width: 4; }
+  .node.root text { fill: #fff; }
+  .node.off { opacity: .45; }
+  .node:hover { opacity: 1; }
+  .node text, .gap text { text-anchor: middle; dominant-baseline: central; }
+  .letter { font-size: 19px; font-weight: 600; }
+  .solf { font-size: 9.5px; }
+  .chord-shape { fill: rgba(255, 92, 30, .12); stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; }
+  .ghost { fill: none; stroke: var(--fg); stroke-opacity: .6; stroke-width: 2; stroke-dasharray: 7 6; pointer-events: none; }
+  .gap { pointer-events: none; }
+  .gap circle { fill: var(--bg); stroke: var(--accent); stroke-width: 1.5; }
+  .gap text { fill: var(--fg); font-size: 13px; font-weight: 700; }
+
+  #piano { display: block; width: min(720px, 100%); height: auto; margin: 0 auto; }
+  .key { stroke: #a8a293; }
+  .key.white { fill: var(--key-white); }
+  .key.black { fill: var(--key-black); stroke: var(--key-black); }
+  .key.tone { fill: var(--accent-soft); }
+  .key.root { fill: var(--accent); }
+  .key-label { font-family: var(--mono); font-size: 11px; fill: #5a564a; text-anchor: middle; }
+
+  .help { margin-top: 10px; padding-top: 18px; border-top: 1px solid var(--rule); }
+  .help h2 {
+    margin: 0 0 12px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+  .help ul { margin: 0; padding-left: 18px; columns: 2 340px; column-gap: 44px; }
+  .help li { margin: 0 0 8px; line-height: 1.5; break-inside: avoid; }
+  .help li::marker { color: var(--accent); }
+  .help b { font-weight: 600; }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="titles">
+      <a class="eyebrow" href="https://www.vlasikhin.com/projects/">Pavel Vlasikhin · Projects</a>
+      <h1>Chord Clock</h1>
+      <div class="lede" data-i18n="lede"></div>
+    </div>
+    <div class="settings">
+      <div class="lang">
+        <button data-lang="en">EN</button>
+        <span>/</span>
+        <button data-lang="ru">RU</button>
+      </div>
+      <label><input type="checkbox" id="show-solfege"> <span data-i18n="solfegeToggle"></span></label>
+    </div>
+  </header>
+
+  <main>
+    <svg id="clock" viewBox="0 0 500 500"></svg>
+    <section class="side">
+      <div class="types" id="types"></div>
+      <div class="actions">
+        <button id="play" data-i18n="play"></button>
+        <button id="arpeggio" data-i18n="arpeggio"></button>
+        <label id="compare-label"><input type="checkbox" id="compare"> <span data-i18n="compare"></span></label>
+      </div>
+      <div class="panel">
+        <div class="title">
+          <span class="symbol" id="symbol"></span>
+          <button id="enharmonic"></button>
+        </div>
+        <div class="legend" id="legend"></div>
+        <table id="tones"></table>
+      </div>
+    </section>
+  </main>
+
+  <svg id="piano" viewBox="-1 0 602 126"></svg>
+
+  <section class="help">
+    <h2 data-i18n="helpTitle"></h2>
+    <ul id="help"></ul>
+  </section>
+</div>
+
+<script id="theory">
+const LETTERS = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+const NATURAL_PC = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+const ROOT_NAMES = {
+  major: ['C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'],
+  minor: ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#', 'A', 'Bb', 'B'],
+};
+const ENHARMONIC = {
+  'C#': 'Db', 'Db': 'C#', 'D#': 'Eb', 'Eb': 'D#', 'F#': 'Gb',
+  'Gb': 'F#', 'G#': 'Ab', 'Ab': 'G#', 'A#': 'Bb', 'Bb': 'A#',
+};
+
+const CHORD_TYPES = [
+  { name: 'maj',     symbol: '',        degrees: ['1', '3', '5'],             semis: [0, 4, 7] },
+  { name: 'm',       symbol: 'm',       degrees: ['1', 'b3', '5'],            semis: [0, 3, 7] },
+  { name: '7',       symbol: '7',       degrees: ['1', '3', '5', 'b7'],       semis: [0, 4, 7, 10] },
+  { name: 'maj7',    symbol: 'maj7',    degrees: ['1', '3', '5', '7'],        semis: [0, 4, 7, 11] },
+  { name: 'm7',      symbol: 'm7',      degrees: ['1', 'b3', '5', 'b7'],      semis: [0, 3, 7, 10] },
+  { name: 'm(maj7)', symbol: 'm(maj7)', degrees: ['1', 'b3', '5', '7'],       semis: [0, 3, 7, 11] },
+  { name: 'add9',    symbol: 'add9',    degrees: ['1', '3', '5', '9'],        semis: [0, 4, 7, 14] },
+  { name: 'm(add9)', symbol: 'm(add9)', degrees: ['1', 'b3', '5', '9'],       semis: [0, 3, 7, 14] },
+  { name: 'maj9',    symbol: 'maj9',    degrees: ['1', '3', '5', '7', '9'],   semis: [0, 4, 7, 11, 14] },
+  { name: 'm9',      symbol: 'm9',      degrees: ['1', 'b3', '5', 'b7', '9'], semis: [0, 3, 7, 10, 14] },
+  { name: 'sus2',    symbol: 'sus2',    degrees: ['1', '2', '5'],             semis: [0, 2, 7] },
+  { name: 'sus4',    symbol: 'sus4',    degrees: ['1', '4', '5'],             semis: [0, 5, 7] },
+  { name: 'dim',     symbol: 'dim',     degrees: ['1', 'b3', 'b5'],           semis: [0, 3, 6] },
+  { name: 'aug',     symbol: 'aug',     degrees: ['1', '3', '#5'],            semis: [0, 4, 8] },
+];
+
+function degreeSteps(degree) {
+  return (Number(degree.replace(/\D/g, '')) - 1) % 7;
+}
+
+function pcOf(name) {
+  const accidental = name[1] === '#' ? 1 : name[1] === 'b' ? -1 : 0;
+  return (NATURAL_PC[name[0]] + accidental + 12) % 12;
+}
+
+function rootName(rootPc, type, useAlt) {
+  const name = (type.degrees.includes('b3') ? ROOT_NAMES.minor : ROOT_NAMES.major)[rootPc];
+  return useAlt && ENHARMONIC[name] ? ENHARMONIC[name] : name;
+}
+
+function spellTone(root, rootPc, degree, semi) {
+  const letter = LETTERS[(LETTERS.indexOf(root[0]) + degreeSteps(degree)) % 7];
+  const pc = (rootPc + semi) % 12;
+  const accidental = ((pc - NATURAL_PC[letter] + 18) % 12) - 6;
+  if (accidental === 0) return letter;
+  if (accidental === 1) return letter + '#';
+  if (accidental === -1) return letter + 'b';
+  return ROOT_NAMES.major[pc];
+}
+
+function spellChord(root, type) {
+  const rootPc = pcOf(root);
+  return type.degrees.map((degree, i) => spellTone(root, rootPc, degree, type.semis[i]));
+}
+
+function gaps(semis) {
+  const positions = semis.map(s => s % 12).sort((a, b) => a - b);
+  return positions.map((p, i) => (positions[i + 1] ?? 12) - p);
+}
+
+function canCompare(type) {
+  return type.degrees.some(d => d === '3' || d === 'b3') && type.degrees.includes('5');
+}
+
+function flippedSymbol(symbol) {
+  if (symbol.startsWith('m') && !symbol.startsWith('maj')) {
+    return symbol.slice(1).replace(/^\((.*)\)$/, '$1');
+  }
+  return /^(maj|add)/.test(symbol) ? `m(${symbol})` : 'm' + symbol;
+}
+
+function flipThird(type) {
+  const degrees = type.degrees.map(d => (d === '3' ? 'b3' : d === 'b3' ? '3' : d));
+  const semis = type.semis.map((s, i) => (degrees[i] === '3' ? 4 : degrees[i] === 'b3' ? 3 : s));
+  return { symbol: flippedSymbol(type.symbol), degrees, semis };
+}
+
+function selfTest() {
+  let failed = 0;
+  const check = (ok, message) => {
+    console.assert(ok, message);
+    if (!ok) failed++;
+  };
+
+  const cases = [
+    ['C', 'maj', 'C E G'],
+    ['C', 'm', 'C Eb G'],
+    ['A', 'm7', 'A C E G'],
+    ['F', 'm', 'F Ab C'],
+    ['F#', 'm', 'F# A C#'],
+    ['Bb', '7', 'Bb D F Ab'],
+    ['Eb', 'maj7', 'Eb G Bb D'],
+    ['C', 'm(maj7)', 'C Eb G B'],
+    ['D', 'm9', 'D F A C E'],
+    ['G', 'sus4', 'G C D'],
+    ['Db', 'maj', 'Db F Ab'],
+    ['C#', 'm', 'C# E G#'],
+    ['G#', 'm7', 'G# B D# F#'],
+  ];
+  for (const [root, typeName, expected] of cases) {
+    const type = CHORD_TYPES.find(t => t.name === typeName);
+    const actual = spellChord(rootName(pcOf(root), type, false), type).join(' ');
+    check(actual === expected, `${root}${type.symbol}: ${actual}, ожидалось ${expected}`);
+  }
+
+  check(gaps([0, 4, 7]).join(' ') === '4 3 5', 'C: часы должны быть 4 3 5');
+  check(gaps([0, 3, 7]).join(' ') === '3 4 5', 'Cm: часы должны быть 3 4 5');
+
+  for (const type of CHORD_TYPES) {
+    const total = gaps(type.semis).reduce((sum, gap) => sum + gap, 0);
+    check(total === 12, `${type.name}: сумма часов ${total}, а не 12`);
+
+    type.degrees.forEach((degree, i) => {
+      const expected = LETTERS[degreeSteps(degree)] + degree.replace(/\d/g, '');
+      check(spellTone('C', 0, degree, type.semis[i]) === expected,
+        `${type.name}: ступень ${degree} не совпадает с ${type.semis[i]} полутонами`);
+    });
+
+    const minorThird = ['m', 'm7', 'm(maj7)', 'm(add9)', 'm9', 'dim'].includes(type.name);
+    const blackRoots = useAlt => [1, 3, 6, 8, 10].map(pc => rootName(pc, type, useAlt)).join(' ');
+    check(blackRoots(false) === (minorThird ? 'C# Eb F# G# Bb' : 'Db Eb F# Ab Bb'),
+      `${type.name}: основные тоны ${blackRoots(false)}`);
+    check(blackRoots(true) === (minorThird ? 'Db D# Gb Ab A#' : 'C# D# Gb G# A#'),
+      `${type.name}: после ♯/♭ ${blackRoots(true)}`);
+
+    for (let rootPc = 0; rootPc < 12; rootPc++) {
+      for (const useAlt of [false, true]) {
+        const notes = spellChord(rootName(rootPc, type, useAlt), type);
+        check(!notes.some(n => /##|bb/.test(n)), `${notes[0]}${type.symbol}: двойной знак в ${notes.join(' ')}`);
+      }
+    }
+  }
+
+  console.log(failed ? `selfTest: ошибок — ${failed}` : 'selfTest: всё верно');
+  return failed;
+}
+</script>
+
+<script>
+const I18N = {
+  en: {
+    lede: 'Chords on a clock of 12 notes · click a note to pick the root',
+    solfegeToggle: 'Solfège',
+    play: '▶ Play',
+    arpeggio: 'Arpeggio',
+    compare: 'Compare third',
+    compareTitle: 'Overlay the same chord with the other third (3 ↔ ♭3) as a dashed shape',
+    enharmonicTitle: 'Spell the root with ♯ or ♭',
+    rows: { notes: 'Notes', solfege: 'Solfège', degrees: 'Degrees', semis: 'Semitones', intervals: 'Intervals' },
+    dashed: 'Dashed',
+    hours: 'hours',
+    helpTitle: 'How to use',
+    help: [
+      '<b>Click a note</b> on the circle to make it the root. It plays right away.',
+      '<b>Pick a chord type</b> on the right. m means minor: m, m7, m9, m(add9), m(maj7).',
+      '<b>▶ Play</b> sounds the whole chord, <b>Arpeggio</b> plays it note by note upward.',
+      'The circle is a clock: C at 12, one hour is one semitone. The numbers on the shape are the hours between neighboring notes and always add up to 12: major 4 3 5, minor 3 4 5.',
+      '<b>Compare third</b> overlays the same chord with the other third (major ↔ minor) as a dashed shape.',
+      'On a black-key root, the <b>♯ ⇄ ♭</b> button renames it, e.g. C♯ ⇄ D♭.',
+      'The keyboard shows the chord on 25 keys, C2–C4 in Ableton numbering (MIDI 60 = C3).',
+    ],
+    intervals: {
+      '1': 'perfect unison (P1)',
+      '2': 'major second (M2)',
+      'b3': 'minor third (m3)',
+      '3': 'major third (M3)',
+      '4': 'perfect fourth (P4)',
+      'b5': 'diminished fifth (d5)',
+      '5': 'perfect fifth (P5)',
+      '#5': 'augmented fifth (A5)',
+      'b7': 'minor seventh (m7)',
+      '7': 'major seventh (M7)',
+      '9': 'major ninth (M9)',
+    },
+    solfege: { C: 'do', D: 're', E: 'mi', F: 'fa', G: 'sol', A: 'la', B: 'si' },
+    clockSolfege: [
+      'do', 'do♯/re♭', 're', 're♯/mi♭', 'mi', 'fa',
+      'fa♯/sol♭', 'sol', 'sol♯/la♭', 'la', 'la♯/si♭', 'si',
+    ],
+  },
+  ru: {
+    lede: 'Аккорды на циферблате из 12 нот · клик по ноте выбирает основной тон',
+    solfegeToggle: 'Сольфеджио',
+    play: '▶ Играть',
+    arpeggio: 'Арпеджио',
+    compare: 'Сравнить терцию',
+    compareTitle: 'Наложить пунктиром тот же аккорд с другой терцией (3 ↔ ♭3)',
+    enharmonicTitle: 'Назвать основной тон через ♯ или ♭',
+    rows: { notes: 'Ноты', solfege: 'Сольфеджио', degrees: 'Ступени', semis: 'Полутоны', intervals: 'Интервалы' },
+    dashed: 'Пунктир',
+    hours: 'часы',
+    helpTitle: 'Как пользоваться',
+    help: [
+      '<b>Клик по ноте</b> на круге делает её основным тоном и сразу её играет.',
+      '<b>Тип аккорда</b> выбирается кнопками справа. m — минор: m, m7, m9, m(add9), m(maj7).',
+      '<b>▶ Играть</b> — аккорд целиком, <b>Арпеджио</b> — по одной ноте снизу вверх.',
+      'Круг — это циферблат: C на 12 часах, один час — один полутон. Числа на сторонах фигуры — часы между соседними нотами, в сумме всегда 12: мажор 4 3 5, минор 3 4 5.',
+      '<b>Сравнить терцию</b> накладывает пунктиром тот же аккорд с другой терцией (мажор ↔ минор).',
+      'Если основной тон на чёрной клавише, кнопка <b>♯ ⇄ ♭</b> меняет его название, например C♯ ⇄ D♭.',
+      'Клавиатура показывает аккорд на 25 клавишах, C2–C4 в нумерации Ableton (MIDI 60 = C3).',
+    ],
+    intervals: {
+      '1': 'чистая прима (P1)',
+      '2': 'большая секунда (M2)',
+      'b3': 'малая терция (m3)',
+      '3': 'большая терция (M3)',
+      '4': 'чистая кварта (P4)',
+      'b5': 'уменьшённая квинта (d5)',
+      '5': 'чистая квинта (P5)',
+      '#5': 'увеличенная квинта (A5)',
+      'b7': 'малая септима (m7)',
+      '7': 'большая септима (M7)',
+      '9': 'большая нона (M9)',
+    },
+    solfege: { C: 'до', D: 'ре', E: 'ми', F: 'фа', G: 'соль', A: 'ля', B: 'си' },
+    clockSolfege: [
+      'до', 'до♯/ре♭', 'ре', 'ре♯/ми♭', 'ми', 'фа',
+      'фа♯/соль♭', 'соль', 'соль♯/ля♭', 'ля', 'ля♯/си♭', 'си',
+    ],
+  },
+};
+
+const PIANO_LOW = 48;
+const PIANO_HIGH = 72;
+const BLACK_PCS = [1, 3, 6, 8, 10];
+const CENTER = 250;
+const RING_RADIUS = 196;
+const NODE_RADIUS = 31;
+const WHITE_KEY = { width: 40, height: 124 };
+const BLACK_KEY = { width: 24, height: 78 };
+
+const state = {
+  rootPc: 0,
+  useAlt: false,
+  type: CHORD_TYPES[0],
+  compare: false,
+  showSolfege: true,
+  lang: navigator.language?.startsWith('ru') ? 'ru' : 'en',
+};
+
+const clockEl = document.getElementById('clock');
+const pianoEl = document.getElementById('piano');
+const symbolEl = document.getElementById('symbol');
+const legendEl = document.getElementById('legend');
+const tonesEl = document.getElementById('tones');
+const helpEl = document.getElementById('help');
+const enharmonicEl = document.getElementById('enharmonic');
+const compareEl = document.getElementById('compare');
+const compareLabelEl = document.getElementById('compare-label');
+const solfegeToggleEl = document.getElementById('show-solfege');
+const langButtons = [...document.querySelectorAll('.lang button')];
+
+const typeButtons = CHORD_TYPES.map(type => {
+  const button = document.createElement('button');
+  button.textContent = type.name;
+  button.addEventListener('click', () => {
+    state.type = type;
+    state.useAlt = false;
+    render();
+  });
+  document.getElementById('types').append(button);
+  return button;
+});
+
+function pretty(name) {
+  return name.replace('#', '♯').replace('b', '♭');
+}
+
+function solfege(note) {
+  return I18N[state.lang].solfege[note[0]] + pretty(note.slice(1));
+}
+
+function svgEl(tag, attrs, text) {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [key, value] of Object.entries(attrs)) el.setAttribute(key, value);
+  if (text !== undefined) el.textContent = text;
+  return el;
+}
+
+function clockPoint(pc) {
+  const angle = (pc * Math.PI) / 6;
+  return [CENTER + RING_RADIUS * Math.sin(angle), CENTER - RING_RADIUS * Math.cos(angle)];
+}
+
+function clockwisePcs(semis) {
+  return semis.map(s => s % 12).sort((a, b) => a - b).map(s => (state.rootPc + s) % 12);
+}
+
+function shapePoints(pcs) {
+  return pcs.map(pc => clockPoint(pc).join(',')).join(' ');
+}
+
+function currentChord() {
+  const type = state.type;
+  const root = rootName(state.rootPc, type, state.useAlt);
+  const ghost = state.compare && canCompare(type) ? flipThird(type) : null;
+  return {
+    notes: spellChord(root, type),
+    pcs: type.semis.map(s => (state.rootPc + s) % 12),
+    midis: type.semis.map(s => {
+      const midi = PIANO_LOW + state.rootPc + s;
+      return midi > PIANO_HIGH ? midi - 12 : midi;
+    }),
+    ghost: ghost && { ...ghost, notes: spellChord(root, ghost) },
+  };
+}
+
+function renderText() {
+  const t = I18N[state.lang];
+  document.documentElement.lang = state.lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t[el.dataset.i18n];
+  });
+  compareLabelEl.title = t.compareTitle;
+  enharmonicEl.title = t.enharmonicTitle;
+  helpEl.innerHTML = t.help.map(item => `<li>${item}</li>`).join('');
+  langButtons.forEach(button => button.classList.toggle('active', button.dataset.lang === state.lang));
+}
+
+function renderClock(chord) {
+  const ordered = clockwisePcs(state.type.semis);
+  const ghostNames = {};
+  clockEl.replaceChildren(
+    svgEl('circle', { class: 'face', cx: CENTER, cy: CENTER, r: RING_RADIUS }),
+    svgEl('polygon', { class: 'chord-shape', points: shapePoints(ordered) }),
+  );
+  if (chord.ghost) {
+    clockEl.append(svgEl('polygon', { class: 'ghost', points: shapePoints(clockwisePcs(chord.ghost.semis)) }));
+    chord.ghost.semis.forEach((s, i) => {
+      ghostNames[(state.rootPc + s) % 12] = chord.ghost.notes[i];
+    });
+  }
+
+  for (let pc = 0; pc < 12; pc++) {
+    const [x, y] = clockPoint(pc);
+    const toneIndex = chord.pcs.indexOf(pc);
+    const role = pc === state.rootPc ? 'root' : toneIndex >= 0 ? 'tone' : 'off';
+    const node = svgEl('g', { class: `node ${BLACK_PCS.includes(pc) ? 'black' : 'white'} ${role}` });
+    const name = toneIndex >= 0 ? chord.notes[toneIndex] : ghostNames[pc] ?? rootName(pc, state.type, false);
+    node.append(
+      svgEl('circle', { cx: x, cy: y, r: NODE_RADIUS }),
+      svgEl('text', { class: 'letter', x, y: state.showSolfege ? y - 5 : y }, pretty(name)),
+    );
+    if (state.showSolfege) {
+      node.append(svgEl('text', { class: 'solf', x, y: y + 13 }, I18N[state.lang].clockSolfege[pc]));
+    }
+    node.addEventListener('click', () => selectRoot(pc));
+    clockEl.append(node);
+  }
+
+  if (chord.ghost) {
+    const third = chord.ghost.degrees.findIndex(d => d === '3' || d === 'b3');
+    const [x, y] = clockPoint((state.rootPc + chord.ghost.semis[third]) % 12);
+    clockEl.append(svgEl('circle', { class: 'ghost', cx: x, cy: y, r: NODE_RADIUS + 7 }));
+  }
+
+  gaps(state.type.semis).forEach((gap, i) => {
+    const [x1, y1] = clockPoint(ordered[i]);
+    const [x2, y2] = clockPoint(ordered[(i + 1) % ordered.length]);
+    const x = (x1 + x2) / 2;
+    const y = (y1 + y2) / 2;
+    const label = svgEl('g', { class: 'gap' });
+    label.append(svgEl('circle', { cx: x, cy: y, r: 11 }), svgEl('text', { x, y }, gap));
+    clockEl.append(label);
+  });
+}
+
+function renderInfo(chord) {
+  const t = I18N[state.lang];
+  const type = state.type;
+  const defaultName = rootName(state.rootPc, type, false);
+  const altName = ENHARMONIC[defaultName];
+  symbolEl.textContent = pretty(chord.notes[0]) + type.symbol;
+  enharmonicEl.disabled = !altName;
+  enharmonicEl.textContent = altName ? `${pretty(defaultName)} ⇄ ${pretty(altName)}` : '♯ ⇄ ♭';
+
+  legendEl.textContent = '';
+  if (chord.ghost) {
+    const ghostNotes = chord.ghost.notes;
+    legendEl.textContent = `${t.dashed}: ${pretty(ghostNotes[0])}${chord.ghost.symbol} = ` +
+      `${ghostNotes.map(pretty).join(' ')} · ${t.hours} ${gaps(chord.ghost.semis).join(' ')}`;
+  }
+
+  const row = (label, values, rowClass = '') =>
+    `<tr class="${rowClass}"><th>${label}</th>` +
+    values.map((value, i) => `<td class="${i === 0 ? 'root' : ''}">${value}</td>`).join('') +
+    '</tr>';
+  tonesEl.innerHTML = [
+    row(t.rows.notes, chord.notes.map(pretty), 'notes'),
+    state.showSolfege ? row(t.rows.solfege, chord.notes.map(solfege)) : '',
+    row(t.rows.degrees, type.degrees.map(pretty)),
+    row(t.rows.semis, type.semis),
+    row(t.rows.intervals, type.degrees.map(d => t.intervals[d]), 'intervals'),
+  ].join('');
+}
+
+function renderPiano(chord) {
+  const whiteKeys = [];
+  const blackKeys = [];
+  let whiteIndex = 0;
+  for (let midi = PIANO_LOW; midi <= PIANO_HIGH; midi++) {
+    const isBlack = BLACK_PCS.includes(midi % 12);
+    const role = midi === chord.midis[0] ? 'root' : chord.midis.includes(midi) ? 'tone' : '';
+    const className = `key ${isBlack ? 'black' : 'white'} ${role}`;
+    if (isBlack) {
+      const x = whiteIndex * WHITE_KEY.width - BLACK_KEY.width / 2;
+      blackKeys.push(svgEl('rect', { class: className, x, y: -5, width: BLACK_KEY.width, height: BLACK_KEY.height + 5, rx: 4 }));
+      continue;
+    }
+    const x = whiteIndex * WHITE_KEY.width;
+    whiteKeys.push(svgEl('rect', { class: className, x, y: -5, width: WHITE_KEY.width, height: WHITE_KEY.height + 5, rx: 5 }));
+    if (midi % 12 === 0) {
+      const label = `C${Math.floor(midi / 12) - 2}`;
+      whiteKeys.push(svgEl('text', { class: 'key-label', x: x + WHITE_KEY.width / 2, y: WHITE_KEY.height - 10 }, label));
+    }
+    whiteIndex++;
+  }
+  pianoEl.replaceChildren(...whiteKeys, ...blackKeys);
+}
+
+function render() {
+  const chord = currentChord();
+  renderText();
+  typeButtons.forEach((button, i) => button.classList.toggle('active', CHORD_TYPES[i] === state.type));
+  compareEl.checked = state.compare;
+  compareEl.disabled = !canCompare(state.type);
+  solfegeToggleEl.checked = state.showSolfege;
+  renderClock(chord);
+  renderInfo(chord);
+  renderPiano(chord);
+}
+
+let audioContext = null;
+let masterGain = null;
+let activeBus = null;
+
+function audio() {
+  if (!audioContext) {
+    audioContext = new AudioContext();
+    masterGain = audioContext.createGain();
+    masterGain.gain.value = 0.35;
+    masterGain.connect(audioContext.destination);
+  }
+  if (audioContext.state === 'suspended') audioContext.resume();
+  return audioContext;
+}
+
+function midiToHz(midi) {
+  return 440 * 2 ** ((midi - 69) / 12);
+}
+
+function playVoice(ctx, output, midi, start) {
+  const osc = ctx.createOscillator();
+  const env = ctx.createGain();
+  osc.type = 'triangle';
+  osc.frequency.value = midiToHz(midi);
+  env.gain.setValueAtTime(0, start);
+  env.gain.linearRampToValueAtTime(0.22, start + 0.015);
+  env.gain.exponentialRampToValueAtTime(0.12, start + 0.4);
+  env.gain.setValueAtTime(0.12, start + 1);
+  env.gain.exponentialRampToValueAtTime(0.0001, start + 2.4);
+  osc.connect(env).connect(output);
+  osc.start(start);
+  osc.stop(start + 2.45);
+}
+
+function playNotes(midis, spacing) {
+  const ctx = audio();
+  const now = ctx.currentTime;
+  if (activeBus) {
+    const previous = activeBus;
+    previous.gain.setValueAtTime(1, now);
+    previous.gain.linearRampToValueAtTime(0, now + 0.08);
+    setTimeout(() => previous.disconnect(), 200);
+  }
+  activeBus = ctx.createGain();
+  activeBus.connect(masterGain);
+  midis.forEach((midi, i) => playVoice(ctx, activeBus, midi, now + 0.03 + i * spacing));
+}
+
+function selectRoot(pc) {
+  if (pc !== state.rootPc) {
+    state.rootPc = pc;
+    state.useAlt = false;
+  }
+  render();
+  playNotes([PIANO_LOW + pc], 0);
+}
+
+langButtons.forEach(button => button.addEventListener('click', () => {
+  state.lang = button.dataset.lang;
+  render();
+}));
+enharmonicEl.addEventListener('click', () => {
+  state.useAlt = !state.useAlt;
+  render();
+});
+compareEl.addEventListener('change', () => {
+  state.compare = compareEl.checked;
+  render();
+});
+solfegeToggleEl.addEventListener('change', () => {
+  state.showSolfege = solfegeToggleEl.checked;
+  render();
+});
+document.getElementById('play').addEventListener('click', () => playNotes(currentChord().midis, 0));
+document.getElementById('arpeggio').addEventListener('click', () => {
+  playNotes(currentChord().midis.sort((a, b) => a - b), 0.2);
+});
+
+selfTest();
+render();
+</script>
+</body>
+</html>
